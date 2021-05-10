@@ -1,0 +1,3 @@
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles/CAL_P1.dir

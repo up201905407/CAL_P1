@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+iostream
+-
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.cpp
+vehicle.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+algorithm
+-
+climits
+-
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+../Basket/basket.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+vector
+-
+
