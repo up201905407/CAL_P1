@@ -97,6 +97,12 @@
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h">
 			<Option target="CAL_P1"/>
 		</Unit>
+		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h">
+			<Option target="CAL_P1"/>
+		</Unit>
+		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h">
+			<Option target="CAL_P1"/>
+		</Unit>
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.cpp">
 			<Option target="CAL_P1"/>
 		</Unit>
