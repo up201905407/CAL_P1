@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CAL_P1.dir/main.cpp.o"
   "CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o"
   "CMakeFiles/CAL_P1.dir/src/Company/company.cpp.o"
+  "CMakeFiles/CAL_P1.dir/src/Utils/utils.cpp.o"
   "CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o"
 )
 

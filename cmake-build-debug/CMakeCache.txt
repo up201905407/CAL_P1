@@ -324,6 +324,15 @@ googletest-distribution_BINARY_DIR:STATIC=/home/lucas/Desktop/Universidade/2 ano
 googletest-distribution_SOURCE_DIR:STATIC=/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/googletest-master
 
 //Value Computed by CMake
+graphviewer_BINARY_DIR:STATIC=/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/lib/GraphViewerCpp
+
+//Dependencies for the target
+graphviewer_LIB_DEPENDS:STATIC=general;sfml-graphics;general;sfml-window;general;sfml-system;general;pthread;general;X11;
+
+//Value Computed by CMake
+graphviewer_SOURCE_DIR:STATIC=/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp
+
+//Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/lib/googletest-master/googletest
 
 //Value Computed by CMake
@@ -501,7 +510,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -540,6 +549,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STRIP
 CMAKE_STRIP-ADVANCED:INTERNAL=1
+//No dev warnings
+CMAKE_SUPPRESS_DEVELOPER_WARNINGS:INTERNAL=1
 //uname command
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
