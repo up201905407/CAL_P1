@@ -23,6 +23,8 @@ template <class T> class Vertex;
 template <class T>
 class Vertex {
     T info;						// content of the vertex
+    double latitude;                 //latitude of the vertex
+    double longitude;                 //longitude of the vertex
     std::vector<Edge<T> > adj;		// outgoing edges
 
     double dist = 0;
@@ -35,7 +37,7 @@ class Vertex {
     void addEdge(Vertex<T> *dest, double w);
 
 public:
-    Vertex(T in);
+    Vertex(T in, double lat, double lon);
     T getInfo() const;
     double getDist() const;
     Vertex *getPath() const;
@@ -47,7 +49,7 @@ public:
 
 
 template <class T>
-Vertex<T>::Vertex(T in): info(in) {}
+Vertex<T>::Vertex(T in, double lat, double lon): info(in), latitude(lat), longitude(lon) {}
 
 /*
  * Auxiliary function to add an outgoing edge to a vertex (this),
@@ -104,9 +106,10 @@ class Graph {
 
 public:
     Vertex<T> *findVertex(const T &in) const;
-    bool addVertex(const T &in);
+    bool addVertex(const T &in, const double &lat, const double &lon);
     bool addEdge(const T &sourc, const T &dest, double w);
     int getNumVertex() const;
+    void print();
     std::vector<Vertex<T> *> getVertexSet() const;
 
     // Fp06 - single source
@@ -120,6 +123,13 @@ public:
     std::vector<T> getfloydWarshallPath(const T &origin, const T &dest) const;   //TODO...
 
 };
+
+template<class T>
+void Graph<T>::print(){
+    for (Vertex<T>* vertex : vertexSet){
+        std::cout << vertex->info << " " << vertex->latitude << " " << vertex->longitude << std::endl;
+    }
+}
 
 template <class T>
 int Graph<T>::getNumVertex() const {
@@ -147,10 +157,10 @@ Vertex<T> * Graph<T>::findVertex(const T &in) const {
  *  Returns true if successful, and false if a vertex with that content already exists.
  */
 template <class T>
-bool Graph<T>::addVertex(const T &in) {
+bool Graph<T>::addVertex(const T &in, const double &lat, const double &lon) {
     if ( findVertex(in) != NULL)
         return false;
-    vertexSet.push_back(new Vertex<T>(in));
+    vertexSet.push_back(new Vertex<T>(in, lat, lon));
     return true;
 }
 
