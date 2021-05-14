@@ -25,7 +25,7 @@ bool GraphBuilder<T>::fillGraph(const std::string &place) {
     Edges edges = readEdges(getPathEdges(place));
     Nodes nodes = readNodes(getPathNodes(place));
     for (auto node : nodes){
-        if (!graph->addVertex(node.first, node.second.first, node.second.first))
+        if (!graph->addVertex(node.first, node.second.first, node.second.second))
             return false;
     }
     for (auto edge : edges){
