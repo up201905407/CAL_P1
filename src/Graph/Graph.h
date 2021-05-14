@@ -25,7 +25,7 @@ class Vertex {
     T info;						// content of the vertex
     double latitude;                 //latitude of the vertex
     double longitude;                 //longitude of the vertex
-    std::vector<Edge<T> > adj;		// outgoing edges
+    std::vector<Edge<T>> adj;		// outgoing edges
 
     double dist = 0;
     Vertex<T> *path = NULL;
@@ -33,15 +33,16 @@ class Vertex {
 
     bool visited = false;		// auxiliary field
     bool processing = false;	// auxiliary field
-
-    void addEdge(Vertex<T> *dest, double w);
+    void addEdge(T in, Vertex<T> *dest, double w);
 
 public:
     Vertex(T in, double lat, double lon);
     T getInfo() const;
+    double getLatitude() const;
+    double getLongitude() const;
     double getDist() const;
     Vertex *getPath() const;
-
+    std::vector<Edge<T>> getAdj() const;
     bool operator<(Vertex<T> & vertex) const; // // required by MutablePriorityQueue
     friend class Graph<T>;
     friend class MutablePriorityQueue<Vertex<T>>;
@@ -56,8 +57,8 @@ Vertex<T>::Vertex(T in, double lat, double lon): info(in), latitude(lat), longit
  * with a given destination vertex (d) and edge weight (w).
  */
 template <class T>
-void Vertex<T>::addEdge(Vertex<T> *d, double w) {
-    adj.push_back(Edge<T>(d, w));
+void Vertex<T>::addEdge(T in, Vertex<T> *d, double w) {
+    adj.push_back(Edge<T>(in, d, w));
 }
 
 template <class T>
@@ -71,6 +72,16 @@ T Vertex<T>::getInfo() const {
 }
 
 template <class T>
+double Vertex<T>::getLatitude() const {
+    return latitude;
+}
+
+template <class T>
+double Vertex<T>::getLongitude() const {
+    return longitude;
+}
+
+template <class T>
 double Vertex<T>::getDist() const {
     return this->dist;
 }
@@ -80,21 +91,38 @@ Vertex<T> *Vertex<T>::getPath() const {
     return this->path;
 }
 
+template<class T>
+std::vector<Edge<T>> Vertex<T>::getAdj() const {
+    return adj;
+}
+
 /********************** Edge  ****************************/
 
 template <class T>
 class Edge {
+    T info;
     Vertex<T> * dest;      // destination vertex
     double weight;         // edge weight
 public:
-    Edge(Vertex<T> *d, double w);
+    Edge(T in, Vertex<T> *d, double w);
+    T getInfo() const;
+    Vertex<T>* getDest();
     friend class Graph<T>;
     friend class Vertex<T>;
 };
 
 template <class T>
-Edge<T>::Edge(Vertex<T> *d, double w): dest(d), weight(w) {}
+Edge<T>::Edge(T in, Vertex<T> *d, double w): info(in), dest(d), weight(w) {}
 
+template<class T>
+T Edge<T>::getInfo() const{
+    return info;
+}
+
+template<class T>
+Vertex<T>* Edge<T>::getDest(){
+    return dest;
+}
 
 /*************************** Graph  **************************/
 
@@ -107,9 +135,8 @@ class Graph {
 public:
     Vertex<T> *findVertex(const T &in) const;
     bool addVertex(const T &in, const double &lat, const double &lon);
-    bool addEdge(const T &sourc, const T &dest, double w);
+    bool addEdge(const T info, const T &sourc, const T &dest, double w);
     int getNumVertex() const;
-    void print();
     std::vector<Vertex<T> *> getVertexSet() const;
 
     // Fp06 - single source
@@ -123,14 +150,6 @@ public:
     std::vector<T> getfloydWarshallPath(const T &origin, const T &dest) const;   //TODO...
 
 };
-
-template<class T>
-void Graph<T>::print(){
-    for (Vertex<T>* vertex : vertexSet){
-        std::cout << vertex->info << " " << vertex->latitude << " " << vertex->longitude << std::endl;
-    }
-}
-
 template <class T>
 int Graph<T>::getNumVertex() const {
     return vertexSet.size();
@@ -170,12 +189,12 @@ bool Graph<T>::addVertex(const T &in, const double &lat, const double &lon) {
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
 template <class T>
-bool Graph<T>::addEdge(const T &sourc, const T &dest, double w) {
+bool Graph<T>::addEdge(const T in, const T &sourc, const T &dest, double w) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == NULL || v2 == NULL)
         return false;
-    v1->addEdge(v2,w);
+    v1->addEdge(in, v2,w);
     return true;
 }
 

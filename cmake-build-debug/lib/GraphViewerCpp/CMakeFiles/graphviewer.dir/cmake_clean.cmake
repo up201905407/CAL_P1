@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "../../../lib/GraphViewerCpp/lib/libgraphviewer.pdb"
   "CMakeFiles/graphviewer.dir/src/edge.cpp.o"
   "CMakeFiles/graphviewer.dir/src/fpsmonitor.cpp.o"
-  "CMakeFiles/graphviewer.dir/src/graphviewer.cpp.o"
+  "CMakeFiles/graphviewer.dir/src/graphbuilder.cpp.o"
   "CMakeFiles/graphviewer.dir/src/lines.cpp.o"
   "CMakeFiles/graphviewer.dir/src/node.cpp.o"
 )

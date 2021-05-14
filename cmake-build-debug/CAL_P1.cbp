@@ -138,7 +138,7 @@
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/fpsmonitor.cpp">
 			<Option target="graphviewer"/>
 		</Unit>
-		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/graphviewer.cpp">
+		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/graphbuilder.cpp">
 			<Option target="graphviewer"/>
 		</Unit>
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/lines.cpp">
@@ -168,7 +168,10 @@
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h">
 			<Option target="CAL_P1"/>
 		</Unit>
-		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/GraphViewer/graphviewer.h">
+		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/GraphBuilder/graphbuilder.h">
+			<Option target="CAL_P1"/>
+		</Unit>
+		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/gui.h">
 			<Option target="CAL_P1"/>
 		</Unit>
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.cpp">

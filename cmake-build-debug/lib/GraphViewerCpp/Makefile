@@ -198,32 +198,32 @@ src/fpsmonitor.cpp.s:
 	cd "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/src/fpsmonitor.cpp.s
 .PHONY : src/fpsmonitor.cpp.s
 
-src/graphviewer.o: src/graphviewer.cpp.o
+src/graphbuilder.o: src/graphbuilder.cpp.o
 
-.PHONY : src/graphviewer.o
+.PHONY : src/graphbuilder.o
 
 # target to build an object file
-src/graphviewer.cpp.o:
-	cd "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/src/graphviewer.cpp.o
-.PHONY : src/graphviewer.cpp.o
+src/graphbuilder.cpp.o:
+	cd "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/src/graphbuilder.cpp.o
+.PHONY : src/graphbuilder.cpp.o
 
-src/graphviewer.i: src/graphviewer.cpp.i
+src/graphbuilder.i: src/graphbuilder.cpp.i
 
-.PHONY : src/graphviewer.i
+.PHONY : src/graphbuilder.i
 
 # target to preprocess a source file
-src/graphviewer.cpp.i:
-	cd "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/src/graphviewer.cpp.i
-.PHONY : src/graphviewer.cpp.i
+src/graphbuilder.cpp.i:
+	cd "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/src/graphbuilder.cpp.i
+.PHONY : src/graphbuilder.cpp.i
 
-src/graphviewer.s: src/graphviewer.cpp.s
+src/graphbuilder.s: src/graphbuilder.cpp.s
 
-.PHONY : src/graphviewer.s
+.PHONY : src/graphbuilder.s
 
 # target to generate assembly for a file
-src/graphviewer.cpp.s:
-	cd "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/src/graphviewer.cpp.s
-.PHONY : src/graphviewer.cpp.s
+src/graphbuilder.cpp.s:
+	cd "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/src/graphbuilder.cpp.s
+.PHONY : src/graphbuilder.cpp.s
 
 src/lines.o: src/lines.cpp.o
 
@@ -294,9 +294,9 @@ help:
 	@echo "... src/fpsmonitor.o"
 	@echo "... src/fpsmonitor.i"
 	@echo "... src/fpsmonitor.s"
-	@echo "... src/graphviewer.o"
-	@echo "... src/graphviewer.i"
-	@echo "... src/graphviewer.s"
+	@echo "... src/graphbuilder.o"
+	@echo "... src/graphbuilder.i"
+	@echo "... src/graphbuilder.s"
 	@echo "... src/lines.o"
 	@echo "... src/lines.i"
 	@echo "... src/lines.s"

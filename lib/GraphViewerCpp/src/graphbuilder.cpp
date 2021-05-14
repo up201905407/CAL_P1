@@ -202,7 +202,7 @@ void GraphViewer::run(){
     ContextSettings settings;
     settings.antialiasingLevel = 8;
     GraphViewer::createWindowMutex.lock();
-    window = new RenderWindow(VideoMode(this->width, this->height), "GraphViewer", Style::Default, settings);
+    window = new RenderWindow(VideoMode(this->width, this->height), "GraphBuilder", Style::Default, settings);
     GraphViewer::createWindowMutex.unlock();
 
     view = new View(window->getDefaultView());

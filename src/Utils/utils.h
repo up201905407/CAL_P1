@@ -4,8 +4,8 @@
 #include <vector>
 #include <string>
 
-typedef std::vector<std::pair<long int, long int>> Edges;
-typedef std::vector<std::pair<long int, std::pair<double, double>>> Nodes;
+typedef std::vector<std::pair<unsigned long int, std::pair<double, double>>> Edges;
+typedef std::vector<std::pair<unsigned long int, std::pair<double, double>>> Nodes;
 
 Edges readEdges(std::string path);
 Nodes readNodes(std::string path);

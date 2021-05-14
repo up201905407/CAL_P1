@@ -4,7 +4,8 @@
 
 Edges readEdges(std::string path){
     Edges edges;
-    std::pair<long int, long int> pair;
+    std::pair<double, double> pair1;
+    std::pair<unsigned long int, std::pair<double, double>> pair2;
     std::ifstream edges_file(path);
     if (!edges_file.is_open()) {
         std::cerr << "Can't open edges file!" << std::endl;
@@ -18,15 +19,16 @@ Edges readEdges(std::string path){
     edges_file >> numEdges;
     for(int i = 0; i < numEdges; ++i){
         edges_file >> trash >> source >> trash >> target >> trash;
-        pair = {source, target};
-        edges.push_back(pair);
+        pair1 = {source, target};
+        pair2 = {i, pair1};
+        edges.push_back(pair2);
     }
     return edges;
 }
 Nodes readNodes(std::string path){
     Nodes nodes;
     std::pair<double, double> pair1;
-    std::pair<int, std::pair<double, double>> pair2;
+    std::pair<unsigned long int, std::pair<double, double>> pair2;
     std::ifstream nodes_file(path);
     if (!nodes_file.is_open()) {
         std::cerr << "Can't open nodes file!" << std::endl;

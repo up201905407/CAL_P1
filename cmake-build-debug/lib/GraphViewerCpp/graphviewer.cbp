@@ -72,7 +72,7 @@
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/fpsmonitor.cpp">
 			<Option target="graphviewer"/>
 		</Unit>
-		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/graphviewer.cpp">
+		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/graphbuilder.cpp">
 			<Option target="graphviewer"/>
 		</Unit>
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/lines.cpp">

@@ -555,7 +555,7 @@ public:
      * 
      * Please take close attention to the fact that, if edge zipping is enabled,
      * if you change an edge (or the position of a node that has edges connected
-     * to it) you must afterwards call GraphViewer::setZipEdges(true) again, so
+     * to it) you must afterwards call GraphBuilder::setZipEdges(true) again, so
      * the zipped edges object is properly updated.
      * 
      * @param b True to zip edges, false if not.
@@ -566,7 +566,7 @@ public:
      * @brief Lock access to object.
      * 
      * This is important especially if you are editing parameters of nodes/edges
-     * that are inside a GraphViewer instance for which createWindow(int, int)
+     * that are inside a GraphBuilder instance for which createWindow(int, int)
      * was already called. This is because, once you run createWindow(int, int),
      * a thread is created to manage that window's events.
      * 
@@ -664,7 +664,7 @@ private:
      */
     void draw();
     /**
-     * @brief Draw debug information; called by GraphViewer::draw().
+     * @brief Draw debug information; called by GraphBuilder::draw().
      */
     void drawDebug();
 

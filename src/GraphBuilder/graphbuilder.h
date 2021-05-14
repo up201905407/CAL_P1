@@ -5,23 +5,23 @@
 #include "../Utils/utils.h"
 
 template<class T>
-class GraphViewer{
+class GraphBuilder{
 private:
     Graph<T>* graph;
+
 public:
-    explicit GraphViewer(Graph<T>* graph);
+    explicit GraphBuilder(Graph<T>* graph);
     bool fillGraph(const std::string &place);
-
-
 };
 
+
 template<class T>
-GraphViewer<T>::GraphViewer(Graph<T> *graph) {
+GraphBuilder<T>::GraphBuilder(Graph<T> *graph) {
     this->graph = graph;
 }
 
 template<class T>
-bool GraphViewer<T>::fillGraph(const std::string &place) {
+bool GraphBuilder<T>::fillGraph(const std::string &place) {
     Edges edges = readEdges(getPathEdges(place));
     Nodes nodes = readNodes(getPathNodes(place));
     for (auto node : nodes){
@@ -29,7 +29,7 @@ bool GraphViewer<T>::fillGraph(const std::string &place) {
             return false;
     }
     for (auto edge : edges){
-        if (!graph->addEdge(edge.first, edge.second, 1))
+        if (!graph->addEdge(edge.first, edge.second.first, edge.second.second, 1))
             return false;
     }
     return true;

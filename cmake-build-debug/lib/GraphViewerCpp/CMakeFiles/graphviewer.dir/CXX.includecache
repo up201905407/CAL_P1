@@ -710,11 +710,7 @@ cmath
 iostream
 -
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/fpsmonitor.cpp
-fpsmonitor.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/fpsmonitor.h
-
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/graphviewer.cpp
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/graphbuilder.cpp
 graphviewer.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp/src/graphviewer.h
 cmath
