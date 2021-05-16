@@ -135,7 +135,7 @@ class Graph {
 public:
     Vertex<T> *findVertex(const T &in) const;
     bool addVertex(const T &in, const double &lat, const double &lon);
-    bool addEdge(const T info, const T &sourc, const T &dest, double w);
+    bool addEdge(const T &info, const T &sourc, const T &dest, double w);
     int getNumVertex() const;
     std::vector<Vertex<T> *> getVertexSet() const;
 
@@ -189,7 +189,7 @@ bool Graph<T>::addVertex(const T &in, const double &lat, const double &lon) {
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
 template <class T>
-bool Graph<T>::addEdge(const T in, const T &sourc, const T &dest, double w) {
+bool Graph<T>::addEdge(const T &in, const T &sourc, const T &dest, double w) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == NULL || v2 == NULL)
@@ -253,6 +253,7 @@ bool Graph<T>::dijkstraShortestPath(const T &origin, const T& destiny) {
             }
         }
     }
+    return dest->dist != INF;
 }
 
 

@@ -6,13 +6,77 @@
 
 #IncludeRegexTransform: 
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.cpp
-utils.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
-fstream
+../lib/GraphViewerCpp/include/fpsmonitor.h
+chrono
 -
+queue
+-
+
+../lib/GraphViewerCpp/include/graphviewer.h
+string
+-
+thread
+-
+mutex
+-
+unordered_map
+-
+set
+-
+fpsmonitor.h
+../lib/GraphViewerCpp/include/fpsmonitor.h
+SFML/Graphics.hpp
+-
+lines.h
+../lib/GraphViewerCpp/include/lines.h
+
+../lib/GraphViewerCpp/include/lines.h
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/main.cpp
 iostream
 -
+src/Graph/Graph.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+src/GraphBuilder/graphbuilder.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/GraphBuilder/graphbuilder.h
+src/Utils/utils.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
+src/Gui/gui.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/gui.h
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+vector
+-
+queue
+-
+list
+-
+limits
+-
+cmath
+-
+algorithm
+-
+stdexcept
+-
+MutablePriorityQueue.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
+vector
+-
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/GraphBuilder/graphbuilder.h
+../Graph/Graph.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+../Utils/utils.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/gui.h
+../Graph/Graph.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+graphviewer.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/graphviewer.h
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
 vector

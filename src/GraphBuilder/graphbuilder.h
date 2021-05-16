@@ -8,7 +8,6 @@ template<class T>
 class GraphBuilder{
 private:
     Graph<T>* graph;
-
 public:
     explicit GraphBuilder(Graph<T>* graph);
     bool fillGraph(const std::string &place);
