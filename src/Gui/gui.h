@@ -34,6 +34,7 @@ void Gui<T>::graphViewer() {
         Node_Viewer &node = gv.addNode(vertex->getInfo(), sf::Vector2f(vertex->getLongitude(), -vertex->getLatitude()));
         node.setOutlineThickness(0.00002);
         node.setSize(0.0001);
+        node.setColor(GraphViewer::BLACK);
         for (Edge<T> edge_vertex : vertex->getAdj()){
             edges_pair.push_back({edge_vertex.getInfo(), {vertex->getInfo(), edge_vertex.getDest()->getInfo()}});
         }
@@ -45,7 +46,7 @@ void Gui<T>::graphViewer() {
                                        gv.getNode(pair.second.second),
                                        GraphViewer::Edge::UNDIRECTED);
         edge.setThickness(0.0001);
-        edge.setColor(GraphViewer::BLACK);
+        edge.setColor(GraphViewer::WHITE);
     }
 
     gv.setBackground(

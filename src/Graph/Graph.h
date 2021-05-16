@@ -141,7 +141,7 @@ public:
 
     // Fp06 - single source
     void unweightedShortestPath(const T &s);    //TODO...
-    void dijkstraShortestPath(const T &s);      //TODO...
+    bool dijkstraShortestPath(const T &s, const T& t);      //TODO...
     void bellmanFordShortestPath(const T &s);   //TODO...
     std::vector<T> getPath(const T &origin, const T &dest) const;   //TODO...
 
@@ -226,14 +226,15 @@ void Graph<T>::unweightedShortestPath(const T &orig) {
 
 
 template<class T>
-void Graph<T>::dijkstraShortestPath(const T &origin) {
+bool Graph<T>::dijkstraShortestPath(const T &origin, const T& destiny) {
     for (Vertex<T>* vertex : vertexSet){
         vertex->dist = INF;
         vertex->path = nullptr;
     }
     std::queue<Vertex<T>*> queueVertex;
     Vertex<T>* curr = findVertex(origin);
-    if (curr == NULL || vertexSet.empty()) return;
+    Vertex<T>* dest = findVertex(destiny);
+    if (curr == NULL || dest == NULL || vertexSet.empty()) return false;
     curr->dist = 0;
     MutablePriorityQueue<Vertex<T>> q;
     q.insert(curr);
