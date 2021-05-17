@@ -11,5 +11,6 @@ Edges readEdges(std::string path);
 Nodes readNodes(std::string path);
 std::string getPathEdges(const std::string& city);
 std::string getPathNodes(const std::string& place);
+double haversine(double lat1, double lon1, double lat2, double lon2);
 
 #endif //_UTILS_H_

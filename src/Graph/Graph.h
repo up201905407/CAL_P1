@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <stdexcept>
 #include "MutablePriorityQueue.h"
+#include "../Utils/utils.h"
 
 
 template <class T> class Edge;
@@ -29,6 +30,7 @@ class Vertex {
 
     double dist = 0;
     Vertex<T> *path = NULL;
+    Edge<T> *edge_path = NULL;
     int queueIndex = 0; 		// required by MutablePriorityQueue
 
     bool visited = false;		// auxiliary field
@@ -141,7 +143,8 @@ public:
 
     // Fp06 - single source
     void unweightedShortestPath(const T &s);    //TODO...
-    bool dijkstraShortestPath(const T &s, const T& t);      //TODO...
+    bool dijkstraShortestPath(const T &origin, const T& destiny);
+    bool aStarShortestPath(const T &origin, const T& destiny);
     void bellmanFordShortestPath(const T &s);   //TODO...
     std::vector<T> getPath(const T &origin, const T &dest) const;   //TODO...
 
@@ -256,6 +259,38 @@ bool Graph<T>::dijkstraShortestPath(const T &origin, const T& destiny) {
     return dest->dist != INF;
 }
 
+template<class T>
+bool Graph<T>::aStarShortestPath(const T &origin, const T &destiny) {
+    for (Vertex<T>* vertex : vertexSet){
+        vertex->dist = INF;
+        vertex->path = nullptr;
+    }
+    std::queue<Vertex<T>*> queueVertex;
+    Vertex<T>* curr = findVertex(origin);
+    Vertex<T>* dest = findVertex(destiny);
+    if (curr == NULL || dest == NULL || vertexSet.empty()) return false;
+    curr->dist = 0;
+    MutablePriorityQueue<Vertex<T>> q;
+    q.insert(curr);
+    while(!q.empty()){
+        curr = q.extractMin();
+        for (Edge<T> &edge : curr->adj){
+            if (edge.dest->dist > curr->dist + edge.weight){
+                bool wasAlreadyAdded = edge.dest->dist != INF;
+                edge.dest->dist = curr->dist + edge.weight + haversine(curr->getLatitude(), curr->getLongitude(), dest->getLatitude(), dest->getLongitude());
+                edge.dest->path = curr;
+                edge.dest->edge_path = &edge;
+                if (wasAlreadyAdded){
+                    q.decreaseKey(edge.dest);
+                } else {
+                    q.insert(edge.dest);
+                }
+            }
+        }
+    }
+    return dest->dist != INF;
+}
+
 
 template<class T>
 void Graph<T>::bellmanFordShortestPath(const T &orig) {
@@ -290,15 +325,18 @@ template<class T>
 std::vector<T> Graph<T>::getPath(const T &origin, const T &dest) const{
     Vertex<T>* start = findVertex(origin);
     Vertex<T>* end = findVertex(dest);
-    std::vector<T> res;
-    res.push_back(end->info);
+    std::vector<T> edgesPath;
+    edgesPath.push_back(end->edge_path->getInfo());
     Vertex<T>* curr = end;
-    while(curr != start){
+    while(true){
         curr = curr->path;
-        res.push_back(curr->info);
+        if (curr != start)
+            edgesPath.push_back(curr->edge_path->getInfo());
+        else
+            break;
     }
-    std::reverse(res.begin(), res.end());
-    return res;
+    std::reverse(edgesPath.begin(), edgesPath.end());
+    return edgesPath;
 }
 
 

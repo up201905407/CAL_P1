@@ -61,6 +61,8 @@ stdexcept
 -
 MutablePriorityQueue.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
+../Utils/utils.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
 vector

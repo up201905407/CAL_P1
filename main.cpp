@@ -22,8 +22,7 @@ int main() {
     unsigned long int start = 90379359;
     unsigned long int end = 90379614;
     //gui.graphViewer();
-    std::cout << graph.dijkstraShortestPath(start, end) << std::endl;
-    print(graph.getPath(start, end));
-
+    std::cout << graph.aStarShortestPath(start, end) << std::endl;
+    gui.graphViewerWithPath(start, end);
     return 0;
 }
