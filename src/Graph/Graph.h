@@ -4,11 +4,13 @@
 
 #include <vector>
 #include <queue>
+#include <stack>
 #include <list>
 #include <limits>
 #include <cmath>
 #include <algorithm>
 #include <stdexcept>
+#include <set>
 #include "MutablePriorityQueue.h"
 #include "../Utils/utils.h"
 
@@ -35,6 +37,11 @@ class Vertex {
 
     bool visited = false;		// auxiliary field
     bool processing = false;	// auxiliary field
+
+    int index = INT_MAX;   //auxiliary field - Tarjans strongly Connected
+    bool isOnStack = false;  //auxiliary field - Tarjans strongly Connected
+    int lowlink = INT_MAX;  //auxiliary field - Tarjans strongly Connected
+
     void addEdge(T in, Vertex<T> *dest, double w);
 
 public:
@@ -152,6 +159,8 @@ public:
     void floydWarshallShortestPath();   //TODO...
     std::vector<T> getfloydWarshallPath(const T &origin, const T &dest) const;   //TODO...
 
+    std::set<std::set<T>> getTarjanStronglyConnectedVertex();
+    void strongConnect(Vertex<T> *v ,std::stack<Vertex<T>*> &stack, int &index, std::set<std::set<T>> &results);
 };
 template <class T>
 int Graph<T>::getNumVertex() const {
@@ -428,6 +437,63 @@ std::vector<T> Graph<T>::getfloydWarshallPath(const T &orig, const T &dest) cons
     res.push_back(vertexSet.at(destinationIndex)->info);
     return res;
 }
+
+
+/*********************Strong Connected Vertexes****************************/
+
+template<class T>
+std::set<std::set<T>> Graph<T>::getTarjanStronglyConnectedVertex(){
+    for(Vertex<T>* v : this->vertexSet){
+        v->index = INT_MAX;
+        v->isOnStack = false;
+        v->lowlink = INT_MAX;
+    }
+
+    int index = 0;
+    std::set<std::set<T>> results;
+    std::stack<Vertex<T>*> stack;
+
+    for(auto v : this->vertexSet){
+        if(v->index==INT_MAX)
+            strongConnect(v,stack,index,results);
+
+    }
+    return results;
+}
+
+template<class T>
+void Graph<T>::strongConnect(Vertex<T>* v,std::stack<Vertex<T>*> &stack, int &index,std::set<std::set<T>> &results) {
+    Vertex<T>* w;
+    v->index = index;
+    v->lowlink = index;
+    index += 1;
+    stack.push(v);
+    v->isOnStack = true;
+
+    for (Edge<T> e : v->adj){
+        if (e.dest->index == INT_MAX) {
+            strongConnect(e.dest, stack, index, results);
+            v->lowlink = std::min(v->lowlink, e.dest->lowlink);
+        } else if (e.dest->isOnStack) {
+            v->lowlink = std::min(v->lowlink, e.dest->index);
+        }
+    }
+
+    if(v->lowlink == v->index){
+        std::set<T> str_component;
+        do{
+            w = stack.top();
+            stack.pop();
+            w->isOnStack = false;
+            str_component.insert(w->info);
+        }while(v!= w);
+        if(str_component.size()>1) {
+            results.insert(str_component);
+        }
+    }
+}
+
+
 
 
 #endif //_GRAPH_H_

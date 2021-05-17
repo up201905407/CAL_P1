@@ -11,6 +11,17 @@ void print(std::vector<unsigned long int> const &input)
     }
 }
 
+
+void sccViewer(std::set<std::set<unsigned long int>> input){
+    for(auto i = input.begin(); i!=input.end(); i++){
+        std::cout<<"->";
+        for (auto it = i->begin(); it!=i->end(); it++) {
+            std::cout << *(it) << ' ';
+        }
+        std::cout<<std::endl;
+    }
+}
+
 int main() {
     Graph<unsigned long int> graph;
     GraphBuilder<unsigned long int> graphBuilder(&graph);
@@ -21,8 +32,11 @@ int main() {
     Gui<unsigned long int> gui(&graph);
     unsigned long int start = 90379359;
     unsigned long int end = 90379614;
-    //gui.graphViewer();
-    std::cout << graph.aStarShortestPath(start, end) << std::endl;
-    gui.graphViewerWithPath(start, end);
+    gui.graphViewer();
+    //std::cout << graph.aStarShortestPath(start, end) << std::endl;
+    //print(graph.getPath(start, end));
+    sccViewer(graph.getTarjanStronglyConnectedVertex());
+
+    //gui.graphViewerWithPath(start, end);
     return 0;
 }
