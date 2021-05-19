@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <stdexcept>
 #include <set>
+#include <climits>
 #include "MutablePriorityQueue.h"
 #include "../Utils/utils.h"
 

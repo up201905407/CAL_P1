@@ -43,11 +43,19 @@ src/Utils/utils.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
 src/Gui/gui.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/gui.h
+src/Menu/menu.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+iostream
+-
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
 vector
 -
 queue
+-
+stack
 -
 list
 -
@@ -58,6 +66,10 @@ cmath
 algorithm
 -
 stdexcept
+-
+set
+-
+climits
 -
 MutablePriorityQueue.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
@@ -80,9 +92,25 @@ vector
 graphviewer.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/graphviewer.h
 
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.cpp
+iostream
+-
+menu.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+../Vehicle/vehicle.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
 vector
 -
 string
+-
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+../Basket/basket.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+vector
 -
 

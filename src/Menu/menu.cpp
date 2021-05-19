@@ -1,9 +1,9 @@
-//
-// Created by guipg on 16/05/2021.
-//
 #include <iostream>
-#include "Menu.h"
-#include "../Vehicle/vehicle.h"
+#include "menu.h"
+
+Menu::Menu(Company *company){
+    this->company = company;
+}
 
 void Menu::init(){
     while (true){
@@ -94,6 +94,7 @@ void Menu::createVehicle(){
         std::cin >> vehicleCap;
     }
     Vehicle* v = new Vehicle(vehicleCap);
+    company->addVehicle(v);
     return;
 }
 
@@ -139,5 +140,6 @@ void Menu::createBasket(){
     }
 
     Basket* b = new Basket(clientName, numPack, idDest, numFat);
+    company->addBasket(b);
     return;
 }

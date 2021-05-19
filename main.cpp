@@ -3,6 +3,7 @@
 #include "src/GraphBuilder/graphbuilder.h"
 #include "src/Utils/utils.h"
 #include "src/Gui/gui.h"
+#include "src/Menu/menu.h"
 
 void print(std::vector<unsigned long int> const &input)
 {
@@ -23,6 +24,7 @@ void sccViewer(std::set<std::set<unsigned long int>> input){
 }
 
 int main() {
+    /*
     Graph<unsigned long int> graph;
     GraphBuilder<unsigned long int> graphBuilder(&graph);
     std::string city = "porto";
@@ -32,11 +34,15 @@ int main() {
     Gui<unsigned long int> gui(&graph);
     unsigned long int start = 90379359;
     unsigned long int end = 90379614;
-    gui.graphViewer();
-    //std::cout << graph.aStarShortestPath(start, end) << std::endl;
-    //print(graph.getPath(start, end));
-    sccViewer(graph.getTarjanStronglyConnectedVertex());
+    //gui.graphViewer();
+    std::cout << graph.aStarShortestPath(start, end) << std::endl;
+    print(graph.getPath(start, end));
+    //sccViewer(graph.getTarjanStronglyConnectedVertex());
 
-    //gui.graphViewerWithPath(start, end);
+    gui.graphViewerWithPath(start, end);
+    return 0;*/
+    Company company;
+    Menu menu(&company);
+    menu.init();
     return 0;
 }

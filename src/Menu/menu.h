@@ -1,17 +1,15 @@
-//
-// Created by guipg on 16/05/2021.
-//
+#ifndef _MENU_H_
+#define _MENU_H_
 
-#ifndef CAL_P1_MENU_H
-#define CAL_P1_MENU_H
-
+#include "../Company/company.h"
 
 class Menu {
 public:
-    Menu();
+    Menu(Company *company);
     void init();
 
 private:
+    Company *company;
     void insertionMenu();
     void resultsMenu();
     void createVehicle();
@@ -19,4 +17,4 @@ private:
 };
 
 
-#endif //CAL_P1_MENU_H
+#endif //_MENU_H_

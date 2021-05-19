@@ -89,22 +89,9 @@ CMakeFiles/CAL_P1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAL_P1.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/main.cpp" -o CMakeFiles/CAL_P1.dir/main.cpp.s
 
-CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o: CMakeFiles/CAL_P1.dir/flags.make
-CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o: ../src/Basket/basket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o -c "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.cpp"
-
-CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.cpp" > CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.i
-
-CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.cpp" -o CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.s
-
 CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o: CMakeFiles/CAL_P1.dir/flags.make
 CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o: ../src/Vehicle/vehicle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o -c "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.cpp"
 
 CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.i: cmake_force
@@ -114,6 +101,19 @@ CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.i: cmake_force
 CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.cpp" -o CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.s
+
+CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o: CMakeFiles/CAL_P1.dir/flags.make
+CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o: ../src/Basket/basket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o -c "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.cpp"
+
+CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.cpp" > CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.i
+
+CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.cpp" -o CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.s
 
 CMakeFiles/CAL_P1.dir/src/Company/company.cpp.o: CMakeFiles/CAL_P1.dir/flags.make
 CMakeFiles/CAL_P1.dir/src/Company/company.cpp.o: ../src/Company/company.cpp
@@ -141,26 +141,41 @@ CMakeFiles/CAL_P1.dir/src/Utils/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAL_P1.dir/src/Utils/utils.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.cpp" -o CMakeFiles/CAL_P1.dir/src/Utils/utils.cpp.s
 
+CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: CMakeFiles/CAL_P1.dir/flags.make
+CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Menu/menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o -c "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.cpp"
+
+CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.cpp" > CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.i
+
+CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.cpp" -o CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.s
+
 # Object files for target CAL_P1
 CAL_P1_OBJECTS = \
 "CMakeFiles/CAL_P1.dir/main.cpp.o" \
-"CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o" \
 "CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o" \
+"CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o" \
 "CMakeFiles/CAL_P1.dir/src/Company/company.cpp.o" \
-"CMakeFiles/CAL_P1.dir/src/Utils/utils.cpp.o"
+"CMakeFiles/CAL_P1.dir/src/Utils/utils.cpp.o" \
+"CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o"
 
 # External object files for target CAL_P1
 CAL_P1_EXTERNAL_OBJECTS =
 
 CAL_P1: CMakeFiles/CAL_P1.dir/main.cpp.o
-CAL_P1: CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o
 CAL_P1: CMakeFiles/CAL_P1.dir/src/Vehicle/vehicle.cpp.o
+CAL_P1: CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o
 CAL_P1: CMakeFiles/CAL_P1.dir/src/Company/company.cpp.o
 CAL_P1: CMakeFiles/CAL_P1.dir/src/Utils/utils.cpp.o
+CAL_P1: CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o
 CAL_P1: CMakeFiles/CAL_P1.dir/build.make
 CAL_P1: ../lib/GraphViewerCpp/lib/libgraphviewer.a
 CAL_P1: CMakeFiles/CAL_P1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CAL_P1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable CAL_P1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CAL_P1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

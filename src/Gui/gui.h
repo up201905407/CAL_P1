@@ -75,7 +75,7 @@ void Gui<T>::graphViewerWithPath(const T &origin, const T &dest){
         Node_Viewer &node = gv.addNode(vertex->getInfo(), sf::Vector2f(vertex->getLongitude(), -vertex->getLatitude()));
         node.setOutlineThickness(0.00002);
         node.setSize(0.0001);
-        node.setColor(GraphViewer::BLACK);
+        node.setColor(GraphViewer::GREEN);
         for (Edge<T> edge_vertex : vertex->getAdj()){
             edges_pair.push_back({edge_vertex.getInfo(), {vertex->getInfo(), edge_vertex.getDest()->getInfo()}});
         }
@@ -102,10 +102,10 @@ void Gui<T>::graphViewerWithPath(const T &origin, const T &dest){
         Edge_Viewer &edge = gv.getEdge(info);
         edge.setColor(GraphViewer::BLUE);
     }
-/*
-    gv.setEnabledNodes(false); // Disable node drawing
+
+    //gv.setEnabledNodes(false); // Disable node drawing
     gv.setEnabledEdgesText(false); // Disable edge text drawing
-    gv.setZipEdges(true);*/
+    gv.setZipEdges(true);
     gv.createWindow(1600, 900);
     gv.join();
 }

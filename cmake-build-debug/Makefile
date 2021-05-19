@@ -236,6 +236,33 @@ src/Company/company.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CAL_P1.dir/build.make CMakeFiles/CAL_P1.dir/src/Company/company.cpp.s
 .PHONY : src/Company/company.cpp.s
 
+src/Menu/menu.o: src/Menu/menu.cpp.o
+
+.PHONY : src/Menu/menu.o
+
+# target to build an object file
+src/Menu/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CAL_P1.dir/build.make CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o
+.PHONY : src/Menu/menu.cpp.o
+
+src/Menu/menu.i: src/Menu/menu.cpp.i
+
+.PHONY : src/Menu/menu.i
+
+# target to preprocess a source file
+src/Menu/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CAL_P1.dir/build.make CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.i
+.PHONY : src/Menu/menu.cpp.i
+
+src/Menu/menu.s: src/Menu/menu.cpp.s
+
+.PHONY : src/Menu/menu.s
+
+# target to generate assembly for a file
+src/Menu/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CAL_P1.dir/build.make CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.s
+.PHONY : src/Menu/menu.cpp.s
+
 src/Utils/utils.o: src/Utils/utils.cpp.o
 
 .PHONY : src/Utils/utils.o
@@ -309,6 +336,9 @@ help:
 	@echo "... src/Company/company.o"
 	@echo "... src/Company/company.i"
 	@echo "... src/Company/company.s"
+	@echo "... src/Menu/menu.o"
+	@echo "... src/Menu/menu.i"
+	@echo "... src/Menu/menu.s"
 	@echo "... src/Utils/utils.o"
 	@echo "... src/Utils/utils.i"
 	@echo "... src/Utils/utils.s"
