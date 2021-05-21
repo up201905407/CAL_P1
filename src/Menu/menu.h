@@ -10,10 +10,12 @@ public:
 
 private:
     Company *company;
-    void insertionMenu();
+    void dataMenu();
     void resultsMenu();
     void createVehicle();
     void createBasket();
+    void deleteVehicle();
+    void deleteBasket();
 };
 
 
