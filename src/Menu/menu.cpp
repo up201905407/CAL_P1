@@ -77,6 +77,30 @@ void Menu::insertionMenu(){
 void Menu::resultsMenu(){
     // mostrar mapa
     // mostrar o caminho de cada veículo
+    while (true){
+        std::cout << "1 - Distribute baskets by vehicles and show results" << std::endl;
+        std::cout << "2 - Back" << std::endl;
+        int userInput;
+        std::cin >> userInput;
+        if (std::cin.fail() || std::cin.eof()){
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            std::cout << "Please enter a valid option" << std::endl;
+            continue;
+        }
+        std::cin.ignore(1000, '\n');
+        switch (userInput) {
+            case 1:
+                //getBasketsByVehicles;
+                //show graph viewer with path colored
+                break;
+            case 2:
+                return;
+            default:
+                std::cout << "Please enter a valid option" << std::endl;
+                continue;
+        }
+    }
 }
 
 void Menu::createVehicle(){
