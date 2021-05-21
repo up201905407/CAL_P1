@@ -91,7 +91,7 @@ void Menu::resultsMenu(){
         std::cin.ignore(1000, '\n');
         switch (userInput) {
             case 1:
-                //this->company.getBasketsByVehicles();
+                //this->company.distributeBasketsByVehicles();
                 //show graph viewer with path colored
                 break;
             case 2:
