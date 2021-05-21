@@ -47,9 +47,8 @@ void Menu::init(){
 void Menu::insertionMenu(){
     while (true){
         std::cout << "1 - Create vehicle" << std::endl;
-        std::cout << "2 - Create package" << std::endl;
-        std::cout << "3 - Create basket" << std::endl;
-        std::cout << "4 - Back" << std::endl;
+        std::cout << "2 - Create basket" << std::endl;
+        std::cout << "3 - Back" << std::endl;
         int userInput;
         std::cin >> userInput;
         if (std::cin.fail() || std::cin.eof()){
@@ -64,12 +63,9 @@ void Menu::insertionMenu(){
                 createVehicle();
                 break;
             case 2:
-                //createPackage();
-                break;
-            case 3:
                 createBasket();
                 break;
-            case 4:
+            case 3:
                 return;
             default:
                 std::cout << "Please enter a valid option" << std::endl;
