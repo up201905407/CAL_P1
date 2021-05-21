@@ -47,3 +47,6 @@ bool Company::removeBasket(unsigned long int numFat){
     }
 }
 
+void Company::distributeBasketsByVehicles() {
+    
+}
