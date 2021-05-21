@@ -14,7 +14,7 @@ public:
     Basket* findBasket(unsigned long int numFat);
     bool removeVehicle(unsigned int id);
     bool removeBasket(unsigned long int numFat);
-
+    void distributeBasketsByVehicles();
 
 };
 
