@@ -7,7 +7,7 @@ Menu::Menu(Company *company){
 
 void Menu::init(){
     while (true){
-        std::cout << "1 - Insert data" << std::endl;
+        std::cout << "1 - Edit data" << std::endl;
         std::cout << "2 - Verify connectivity" << std::endl;
         std::cout << "3 - Get shortest path" << std::endl;
         std::cout << "4 - Exit" << std::endl;
@@ -44,11 +44,13 @@ void Menu::init(){
     }
 }
 
-void Menu::insertionMenu(){
+void Menu::dataMenu(){
     while (true){
         std::cout << "1 - Create vehicle" << std::endl;
         std::cout << "2 - Create basket" << std::endl;
-        std::cout << "3 - Back" << std::endl;
+        std::cout << "3 - Delete vehicle" << std::endl;
+        std::cout << "4 - Delete basket" << std::endl;
+        std::cout << "5 - Back" << std::endl;
         int userInput;
         std::cin >> userInput;
         if (std::cin.fail() || std::cin.eof()){
@@ -66,6 +68,12 @@ void Menu::insertionMenu(){
                 createBasket();
                 break;
             case 3:
+                deleteVehicle();
+                break;
+            case 4:
+                deleteBasket();
+                break;
+            case 5:
                 return;
             default:
                 std::cout << "Please enter a valid option" << std::endl;
@@ -161,5 +169,33 @@ void Menu::createBasket(){
 
     Basket* b = new Basket(clientName, numPack, idDest, numFat);
     company->addBasket(b);
+    return;
+}
+
+void Menu::deleteVehicle(){
+    std::cout << "Please enter the id of vehicle to be erased" << std::endl;
+    int vehicleId;
+    std::cin >> vehicleId;
+    while (std::cin.fail() || std::cin.eof() || vehicleId < 0){
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Please enter vehicle capacity" << std::endl;
+        std::cin >> vehicleId;
+    }
+    company->removeVehicle(vehicleId);
+    return;
+}
+
+void Menu::deleteBasket(){
+    std::cout << "Please enter the numFat of basket to be erased" << std::endl;
+    int numFat;
+    std::cin >> numFat;
+    while (std::cin.fail() || std::cin.eof() || numFat < 0){
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Please enter vehicle capacity" << std::endl;
+        std::cin >> numFat;
+    }
+    company->removeBasket(numFat);
     return;
 }
