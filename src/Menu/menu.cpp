@@ -9,7 +9,7 @@ void Menu::init(){
     while (true){
         std::cout << "1 - Edit data" << std::endl;
         std::cout << "2 - Verify connectivity" << std::endl;
-        std::cout << "3 - Get shortest path" << std::endl;
+        std::cout << "3 - Distribute baskets by vehicles and get shortest path" << std::endl;
         std::cout << "4 - Exit" << std::endl;
         int userInput;
         std::cin >> userInput;
@@ -86,7 +86,7 @@ void Menu::resultsMenu(){
     // mostrar mapa
     // mostrar o caminho de cada veículo
     while (true){
-        std::cout << "1 - Distribute baskets by vehicles and show results" << std::endl;
+        std::cout << "1 - Confirm and show results" << std::endl;
         std::cout << "2 - Back" << std::endl;
         int userInput;
         std::cin >> userInput;
