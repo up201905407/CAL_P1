@@ -22,7 +22,7 @@ void Menu::init(){
         std::cin.ignore(1000, '\n');
         switch (userInput) {
             case 1:
-                insertionMenu();
+                //insertionMenu();
                 break;
             case 2:
                 // função que verifica conetividade

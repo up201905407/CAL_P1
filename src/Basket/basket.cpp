@@ -37,3 +37,11 @@ void Basket::setNumFat(unsigned long int numFat){
 unsigned long Basket::getNumFat(){
     return numFat;
 }
+
+void Basket::setDist(double dist){
+    this->dist = dist;
+}
+
+double Basket::getDist(){
+    return dist;
+}

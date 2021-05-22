@@ -5,12 +5,15 @@ CMakeFiles/CAL_P1.dir/main.cpp.o: ../lib/GraphViewerCpp/include/fpsmonitor.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../lib/GraphViewerCpp/include/graphviewer.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../lib/GraphViewerCpp/include/lines.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../main.cpp
+CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Basket/basket.h
+CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Company/company.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Graph/Graph.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Graph/MutablePriorityQueue.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/GraphBuilder/graphbuilder.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Gui/gui.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Menu/menu.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Utils/utils.h
+CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Vehicle/vehicle.h
 
 CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o: ../src/Basket/basket.cpp
 CMakeFiles/CAL_P1.dir/src/Basket/basket.cpp.o: ../src/Basket/basket.h
@@ -21,6 +24,7 @@ CMakeFiles/CAL_P1.dir/src/Company/company.cpp.o: ../src/Company/company.h
 CMakeFiles/CAL_P1.dir/src/Company/company.cpp.o: ../src/Vehicle/vehicle.h
 
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Basket/basket.h
+CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Company/company.h
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Menu/menu.cpp
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Menu/menu.h
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Vehicle/vehicle.h

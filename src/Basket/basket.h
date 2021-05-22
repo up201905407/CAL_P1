@@ -9,6 +9,7 @@ private:
     unsigned int numPack; /*<Number of packages*/
     unsigned long int idDest; /*<Target vertex identifier*/
     unsigned long int numFat; /*<Bill number*/
+    double dist; /*<Value used when calculating routes*/
 public:
     Basket(std::string clientName, unsigned int numPack, unsigned long idDest, unsigned long numFat);
     void setClientName(std::string clientName);
@@ -19,6 +20,8 @@ public:
     unsigned long getIdDest();
     void setNumFat(unsigned long int numFat);
     unsigned long int getNumFat();
+    void setDist(double dist);
+    double getDist();
 };
 
 #endif //_BASKET_H_

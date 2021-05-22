@@ -138,11 +138,14 @@ Vertex<T>* Edge<T>::getDest(){
 
 template <class T>
 class Graph {
+    Vertex<T> *depot;
     std::vector<Vertex<T> *> vertexSet;    // vertex set
     std::vector<std::vector<int>> D_Floyd_Warshall;
     std::vector<std::vector<int>> P_Floyd_Warshall;
 
 public:
+    bool addDepot(const T &in, const double &lat, const double &lon);
+    Vertex<T> *getDepot() const;
     Vertex<T> *findVertex(const T &in) const;
     bool addVertex(const T &in, const double &lat, const double &lon);
     bool addEdge(const T &info, const T &sourc, const T &dest, double w);
@@ -171,6 +174,20 @@ int Graph<T>::getNumVertex() const {
 template <class T>
 std::vector<Vertex<T> *> Graph<T>::getVertexSet() const {
     return vertexSet;
+}
+
+template<class T>
+bool Graph<T>::addDepot(const T &in, const double &lat, const double &lon){
+    if ( findVertex(in) != NULL)
+        return false;
+    vertexSet.push_back(new Vertex<T>(in, lat, lon));
+    depot = vertexSet[vertexSet.size() - 1];
+    return true;
+}
+
+template<class T>
+Vertex<T>* Graph<T>::getDepot() const {
+    return depot;
 }
 
 /*
@@ -330,7 +347,6 @@ void Graph<T>::bellmanFordShortestPath(const T &orig) {
     }
 }
 
-
 template<class T>
 std::vector<T> Graph<T>::getPath(const T &origin, const T &dest) const{
     Vertex<T>* start = findVertex(origin);
@@ -348,7 +364,6 @@ std::vector<T> Graph<T>::getPath(const T &origin, const T &dest) const{
     std::reverse(edgesPath.begin(), edgesPath.end());
     return edgesPath;
 }
-
 
 
 /**************** All Pairs Shortest Path  ***************/

@@ -46,9 +46,23 @@ src/Gui/gui.h
 src/Menu/menu.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
 
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.cpp
+basket.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
 iostream
 -
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.cpp
+company.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
+algorithm
+-
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
+../Vehicle/vehicle.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
 vector
@@ -97,15 +111,23 @@ iostream
 -
 menu.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
-../Vehicle/vehicle.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+../Company/company.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
 vector
 -
 string
+-
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.cpp
+vehicle.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+algorithm
+-
+climits
 -
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h

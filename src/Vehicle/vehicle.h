@@ -9,7 +9,9 @@ private:
     static unsigned int id; /**<Id Counter*/
     unsigned int uniqueId;
     unsigned long int maxCap;
+    unsigned long int currentLoad; /**<The current load that the vehicle carries*/
     std::vector<Basket*> baskets; /**<List of baskets inside the vehicle*/
+    std::vector<std::pair<unsigned long int , unsigned long int>> path;
 public:
     /**
      * Vehicle's default constructor that will set the maxCap to infinity (i.e., LONG_MAX)
@@ -39,7 +41,7 @@ public:
      * Returns the current maximum capacity of the vehicle
      * @return
      */
-    long int getMaxCap();
+    unsigned long int getMaxCap();
     /**
      * Adds a basket to the list of baskets that the vehicle will carry
      * @param basket The basket to be added
@@ -52,6 +54,13 @@ public:
      * @return This function will return true if the basket was sucessfully found, it will return false, otherwise
      */
     Basket* findBasket(unsigned long int numFat);
+
+    std::vector<Basket*> getBaskets();
+
+    void addPath(std::pair<unsigned long int, unsigned long int> path);
+
+    bool removeBasket(unsigned long int numFat);
+
     /**
      * Will remove every basket from the list
      */

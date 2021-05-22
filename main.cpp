@@ -41,8 +41,30 @@ int main() {
 
     gui.graphViewerWithPath(start, end);
     return 0;*/
-    Company company;
-    Menu menu(&company);
-    menu.init();
+
+    Vehicle v1(30);
+    Vehicle v2(40);
+    Vehicle v3(14);
+    Vehicle v4(18);
+
+    Basket b1("Luis", 20, 1, 1);
+    Basket b2("Luis", 10, 1, 2);
+    Basket b3("Luis", 15, 1, 3);
+    Basket b4("Luis", 5, 1, 4);
+
+    company.addVehicle(&v1);
+    company.addVehicle(&v2);
+    company.addVehicle(&v3);
+    company.addVehicle(&v4);
+
+    company.addBasket(&b1);
+    company.addBasket(&b2);
+    company.addBasket(&b3);
+    company.addBasket(&b4);
+
+    std::cout << company.distributeBasketsByVehicles() << std::endl;
+
+    //Menu menu(&company);
+    //menu.init();
     return 0;
 }

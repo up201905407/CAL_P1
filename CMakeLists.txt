@@ -22,6 +22,7 @@ add_executable(CAL_P1 main.cpp
         src/GraphBuilder/graphbuilder.h
         src/Utils/utils.h src/Utils/utils.cpp
         src/Gui/gui.h
-        src/Menu/menu.h src/Menu/menu.cpp)
+        src/Menu/menu.h src/Menu/menu.cpp
+        src/PathCalculator/pathcalculator.h)
 
 target_link_libraries(CAL_P1 graphviewer)

@@ -7,6 +7,7 @@ unsigned int Vehicle::id = 1;
 
 Vehicle::Vehicle(){
     this->maxCap = LONG_MAX;
+    this->currentLoad = 0;
     setId(id++);
 }
 
@@ -25,13 +26,15 @@ void Vehicle::setMaxCap(unsigned long int maxCap){
     this->maxCap = maxCap;
 }
 
-long int Vehicle::getMaxCap(){
+unsigned long int Vehicle::getMaxCap(){
     return maxCap;
 }
 
 bool Vehicle::addBasket(Basket* basket){
     if (findBasket(basket->getNumFat()) != nullptr) return false;
+    if (basket->getNumPack() > (maxCap - currentLoad)) return false;
     baskets.push_back(basket);
+    currentLoad += basket->getNumPack();
     return true;
 }
 
@@ -41,7 +44,27 @@ Basket* Vehicle::findBasket(unsigned long int numFat){
     else return (*basket_ptr);
 }
 
+std::vector<Basket*> Vehicle::getBaskets(){
+    return baskets;
+}
+
+void Vehicle::addPath(std::pair<unsigned long int, unsigned long int> path){
+    this->path.push_back(path);
+}
+
+bool Vehicle::removeBasket(unsigned long int numFat){
+    Basket* basket = findBasket(numFat);
+    if (basket == nullptr){
+        return false;
+    }
+    else{
+        baskets.erase(std::find(baskets.begin(), baskets.end(), basket));
+        return true;
+    }
+}
+
 void Vehicle::clearBaskets(){
     baskets.clear();
+    currentLoad = 0;
 }
 
