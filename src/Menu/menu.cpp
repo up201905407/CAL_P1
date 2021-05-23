@@ -5,6 +5,7 @@ Menu::Menu(Company *company){
     this->company = company;
 }
 
+
 void Menu::init(){
     while (true){
         std::cout << "1 - Edit data" << std::endl;
@@ -81,6 +82,7 @@ void Menu::dataMenu(){
         }
     }
 }
+
 
 void Menu::resultsMenu(){
     // mostrar mapa
@@ -172,6 +174,7 @@ void Menu::createBasket(){
     return;
 }
 
+
 void Menu::deleteVehicle(){
     std::cout << "Please enter the id of vehicle to be erased" << std::endl;
     int vehicleId;
@@ -185,6 +188,7 @@ void Menu::deleteVehicle(){
     company->removeVehicle(vehicleId);
     return;
 }
+
 
 void Menu::deleteBasket(){
     std::cout << "Please enter the numFat of basket to be erased" << std::endl;

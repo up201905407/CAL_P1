@@ -3,6 +3,7 @@
 
 #include "../Company/company.h"
 
+
 class Menu {
 public:
     Menu(Company *company);

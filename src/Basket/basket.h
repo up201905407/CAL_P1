@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 class Basket{
 private:
     std::string clientName; /*<Recipient's name*/
@@ -16,7 +17,7 @@ public:
     std::string getClientName();
     void setNumPack(unsigned int numPack);
     unsigned int getNumPack();
-    void setIdDest(unsigned long int idDest);
+    void setIdDest( unsigned long idDest);
     unsigned long getIdDest();
     void setNumFat(unsigned long int numFat);
     unsigned long int getNumFat();

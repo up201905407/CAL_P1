@@ -144,8 +144,7 @@ class Graph {
     std::vector<std::vector<int>> P_Floyd_Warshall;
 
 public:
-    bool addDepot(const T &in, const double &lat, const double &lon);
-    Vertex<T> *getDepot() const;
+
     Vertex<T> *findVertex(const T &in) const;
     bool addVertex(const T &in, const double &lat, const double &lon);
     bool addEdge(const T &info, const T &sourc, const T &dest, double w);
@@ -176,6 +175,7 @@ std::vector<Vertex<T> *> Graph<T>::getVertexSet() const {
     return vertexSet;
 }
 
+/*
 template<class T>
 bool Graph<T>::addDepot(const T &in, const double &lat, const double &lon){
     if ( findVertex(in) != NULL)
@@ -185,11 +185,12 @@ bool Graph<T>::addDepot(const T &in, const double &lat, const double &lon){
     return true;
 }
 
+
 template<class T>
 Vertex<T>* Graph<T>::getDepot() const {
     return depot;
 }
-
+*/
 /*
  * Auxiliary function to find a vertex with a given content.
  */

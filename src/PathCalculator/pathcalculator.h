@@ -10,20 +10,22 @@ private:
     Company *company;
     Graph<T> *graph;
     void setDistances(Vehicle* vehicle, double latitude, double longitude);
-    Vertex<T>* getMinDistance(Vehicle* vehicle);
+    Basket* getMinDistance(Vehicle* vehicle);
 public:
     PathCalculator(Company *company, Graph<T> *graph);
     bool getPaths();
 };
 
+
 template<class T>
 void PathCalculator<T>::setDistances(Vehicle* vehicle, double latitude, double longitude){
     for (Basket* basket : vehicle->getBaskets()){
         Vertex<T> *vertex = graph->findVertex(basket->getIdDest());
-        if (vertex == NULL) return false;
+        if (vertex == NULL) return;
         double dist = haversine(latitude, longitude, vertex->getLatitude(), vertex->getLongitude());
-        basket.setDist(dist);
+        basket->setDist(dist);
     }
+
 }
 
 template<class T>

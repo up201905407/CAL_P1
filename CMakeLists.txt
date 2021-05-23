@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.19)
 project(CAL_P1)
 
-set(CMAKE_CXX_STANDARD 14)
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 if (WIN32)
     include_directories("$ENV{SFML_PATH}/include")
     link_directories("$ENV{SFML_PATH}/lib")
 endif()
+
 
 # Build GraphViewerCpp
 set(GRAPHVIEWERCPP_PATH lib/GraphViewerCpp)
@@ -23,6 +25,8 @@ add_executable(CAL_P1 main.cpp
         src/Utils/utils.h src/Utils/utils.cpp
         src/Gui/gui.h
         src/Menu/menu.h src/Menu/menu.cpp
-        src/PathCalculator/pathcalculator.h)
+        src/PathCalculator/pathcalculator.h
+        src/ClarkeWright/ClarkeWright.h
+        )
 
 target_link_libraries(CAL_P1 graphviewer)

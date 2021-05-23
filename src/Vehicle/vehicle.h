@@ -4,14 +4,19 @@
 #include "../Basket/basket.h"
 #include <vector>
 
+
 class Vehicle{
 private:
     static unsigned int id; /**<Id Counter*/
     unsigned int uniqueId;
     unsigned long int maxCap;
-    unsigned long int currentLoad; /**<The current load that the vehicle carries*/
+    unsigned long int currentLoad;
+    /**<The current load that the vehicle carries*/
     std::vector<Basket*> baskets; /**<List of baskets inside the vehicle*/
     std::vector<std::pair<unsigned long int , unsigned long int>> path;
+    std::vector<unsigned long int> path_list = {};
+
+
 public:
     /**
      * Vehicle's default constructor that will set the maxCap to infinity (i.e., LONG_MAX)
@@ -65,6 +70,18 @@ public:
      * Will remove every basket from the list
      */
     void clearBaskets();
+
+    unsigned long getCurrentLoad() const;
+
+    void setCurrentLoad(unsigned long currentLoad);
+
+    const std::vector<unsigned long> &getPathList() const;
+
+    void setPathList(const std::vector<unsigned long> &pathList);
+
+    void addPath( unsigned long path);
+
+    bool isInPath(unsigned long path);
 
 };
 
