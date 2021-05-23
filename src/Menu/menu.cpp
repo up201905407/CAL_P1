@@ -1,12 +1,16 @@
 #include <iostream>
 #include "menu.h"
 
-Menu::Menu(Company *company){
+
+Menu::Menu(Company *company,Graph<unsigned long int> *graph){
     this->company = company;
+    this->graph = graph;
+
 }
 
 
 void Menu::init(){
+    this->gui = Gui<unsigned long int>(this->graph);
     while (true){
         std::cout << "1 - Edit data" << std::endl;
         std::cout << "2 - Verify connectivity" << std::endl;
@@ -26,11 +30,7 @@ void Menu::init(){
                 //insertionMenu();
                 break;
             case 2:
-                // função que verifica conetividade
-                // if (tudo ok)
-                //    std::cout << "It is possible to deliver all orders!" << std::endl << std::endl << std::endl;
-                // else
-                //    std::cout << "It's not possible to deliver all orders. Our fleet can't reach all destinations." << std::endl << std::endl << std::endl;
+                connectivityMenu();
                 break;
             case 3:
                 resultsMenu();
@@ -83,6 +83,34 @@ void Menu::dataMenu(){
     }
 }
 
+void Menu::connectivityMenu() {
+    int counter ;
+    while (true){
+        std::cout << "1 - Confirm and show results" << std::endl;
+        std::cout << "2 - Back" << std::endl;
+        int userInput;
+        std::cin >> userInput;
+        if (std::cin.fail() || std::cin.eof()){
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            std::cout << "Please enter a valid option" << std::endl;
+            continue;
+        }
+        std::cin.ignore(1000, '\n');
+        switch(userInput){
+            case 1:
+                counter = gui.graphViewerConnectivityCheck(graph->getTarjanStronglyConnectedVertex());
+                std::cout<<"Total number of Vertexes: "<<graph->getNumVertex()<<std::endl<< "Vertexes belonging to a SCC: "<<counter<<std::endl<<"Ratio: "<<(double)counter/(double )graph->getNumVertex() * 100<<"%"<<std::endl;
+                _sleep(5);
+                break;
+            case 2:
+                return;
+            default:
+                std::cout << "Please enter a valid option" << std::endl;
+                continue;
+        }
+    }
+}
 
 void Menu::resultsMenu(){
     // mostrar mapa

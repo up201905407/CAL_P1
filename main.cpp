@@ -6,6 +6,7 @@
 #include "src/Company/company.h"
 #include "src/Vehicle/vehicle.h"
 #include "src/Basket/basket.h"
+#include "src/Menu/menu.h"
 
 
 void print(std::vector<unsigned long int> const &input)
@@ -35,19 +36,22 @@ int main() {
     if (!graphBuilder.fillGraph(city)){
         std::cout << "error" << std::endl;
     }
+    /*
     Gui<unsigned long int> gui(&graph);
     unsigned long int start = 90379359;
     unsigned long int end = 90379614;
     //gui.graphViewer();
     //std::cout << graph.aStarShortestPath(start, end) << std::endl;
     //print(graph.getPath(start, end));
-    //sccViewer(graph.getTarjanStronglyConnectedVertex());
+    int scc_Vertexes = gui.graphViewerConnectivityCheck(graph.getTarjanStronglyConnectedVertex());
+    std::cout<<"Total number of Vertexes: "<<graph.getNumVertex()<<std::endl<< "Vertexes belonging to a SCC: "<<scc_Vertexes<<std::endl<<"Ratio: "<<(double)scc_Vertexes/(double )graph.getNumVertex() * 100<<"%"<<std::endl;
     //gui.graphViewerWithPath(start, end);
+         */
     unsigned long int depot = 314075472;
 
     Company company(depot);
 
-
+    /** Testing purposes**/
     Vehicle v1(30);
     Vehicle v2(40);
     Vehicle v3(14);
@@ -68,6 +72,7 @@ int main() {
     company.addBasket(&b3);
     company.addBasket(&b4);
 
+     /* Testing purposes
     ClarkeWright<unsigned long int> clarkeWright(&graph,&company);
 
     clarkeWright.clarkeWight();
@@ -75,10 +80,10 @@ int main() {
     for(Vehicle *vehicle : company.getFleet()){
         print(vehicle->getPathList());
     }
+     */
 
-
-    //Menu menu(&company);
-    //menu.init();
+    Menu menu(&company, &graph);
+    menu.init();
 
     return 0;
 
