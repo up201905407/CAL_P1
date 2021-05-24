@@ -6,14 +6,12 @@ CMakeFiles/CAL_P1.dir/main.cpp.o: ../lib/GraphViewerCpp/include/graphviewer.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../lib/GraphViewerCpp/include/lines.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../main.cpp
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Basket/basket.h
-CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/ClarkeWright/ClarkeWright.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Company/company.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Graph/Graph.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Graph/MutablePriorityQueue.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/GraphBuilder/graphbuilder.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Gui/gui.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Menu/menu.h
-CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/PathCalculator/pathcalculator.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Utils/utils.h
 CMakeFiles/CAL_P1.dir/main.cpp.o: ../src/Vehicle/vehicle.h
 
@@ -36,7 +34,6 @@ CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Graph/MutablePriorityQueue.h
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Gui/gui.h
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Menu/menu.cpp
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Menu/menu.h
-CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/PathCalculator/pathcalculator.h
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Utils/utils.h
 CMakeFiles/CAL_P1.dir/src/Menu/menu.cpp.o: ../src/Vehicle/vehicle.h
 

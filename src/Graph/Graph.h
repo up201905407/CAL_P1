@@ -42,7 +42,6 @@ class Vertex {
     int index = INT_MAX;   //auxiliary field - Tarjans strongly Connected
     bool isOnStack = false;  //auxiliary field - Tarjans strongly Connected
     int lowlink = INT_MAX;  //auxiliary field - Tarjans strongly Connected
-
     void addEdge(T in, Vertex<T> *dest, double w);
 
 public:
@@ -144,24 +143,16 @@ class Graph {
     std::vector<std::vector<int>> P_Floyd_Warshall;
 
 public:
-
     Vertex<T> *findVertex(const T &in) const;
     bool addVertex(const T &in, const double &lat, const double &lon);
     bool addEdge(const T &info, const T &sourc, const T &dest, double w);
     int getNumVertex() const;
     std::vector<Vertex<T> *> getVertexSet() const;
-
-    // Fp06 - single source
-    void unweightedShortestPath(const T &s);    //TODO...
+    void dfsVisit(Vertex<T> *v, std::vector<T> & res) const;
+    std::vector<T> dfs(T item) const;
     bool dijkstraShortestPath(const T &origin, const T& destiny);
     bool aStarShortestPath(const T &origin, const T& destiny);
-    void bellmanFordShortestPath(const T &s);   //TODO...
-    std::vector<T> getPath(const T &origin, const T &dest) const;   //TODO...
-
-    // Fp06 - all pairs
-    void floydWarshallShortestPath();   //TODO...
-    std::vector<T> getfloydWarshallPath(const T &origin, const T &dest) const;   //TODO...
-
+    std::vector<T> getPath(const T &origin, const T &dest) const;
     std::set<std::set<T>> getTarjanStronglyConnectedVertex();
     void strongConnect(Vertex<T> *v ,std::stack<Vertex<T>*> &stack, int &index, std::set<std::set<T>> &results);
 };
@@ -176,22 +167,6 @@ std::vector<Vertex<T> *> Graph<T>::getVertexSet() const {
 }
 
 /*
-template<class T>
-bool Graph<T>::addDepot(const T &in, const double &lat, const double &lon){
-    if ( findVertex(in) != NULL)
-        return false;
-    vertexSet.push_back(new Vertex<T>(in, lat, lon));
-    depot = vertexSet[vertexSet.size() - 1];
-    return true;
-}
-
-
-template<class T>
-Vertex<T>* Graph<T>::getDepot() const {
-    return depot;
-}
-*/
-/*
  * Auxiliary function to find a vertex with a given content.
  */
 template <class T>
@@ -203,7 +178,7 @@ Vertex<T> * Graph<T>::findVertex(const T &in) const {
 }
 
 /*
- *  Adds a vertex with a given content or info (in) to a graph (this).
+ *  Adds a vertex with a given content or info (in) to a Graph (this).
  *  Returns true if successful, and false if a vertex with that content already exists.
  */
 template <class T>
@@ -215,7 +190,7 @@ bool Graph<T>::addVertex(const T &in, const double &lat, const double &lon) {
 }
 
 /*
- * Adds an edge to a graph (this), given the contents of the source and
+ * Adds an edge to a Graph (this), given the contents of the source and
  * destination vertices and the edge weight (w).
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
@@ -229,32 +204,45 @@ bool Graph<T>::addEdge(const T &in, const T &sourc, const T &dest, double w) {
     return true;
 }
 
+/****************** 2a) dfs ********************/
 
-/**************** Single Source Shortest Path algorithms ************/
+/*
+ * Performs a depth-first search (dfs) in a Graph (this).
+ * Returns a vector with the contents of the vertices by dfs order.
+ * Follows the algorithm described in theoretical classes.
+ */
+template <class T>
+std::vector<T> Graph<T>::dfs(T value) const {
+    // TODO (7 lines)
+    std::vector<T> res;
 
-template<class T>
-void Graph<T>::unweightedShortestPath(const T &orig) {
-    for (Vertex<T>* vertex : vertexSet){
-        vertex->dist = INF;
+    for ( auto item : vertexSet) {
+        item->visited = false;
     }
-    std::queue<Vertex<T>*> queueVertex;
-    Vertex<T>* curr = findVertex(orig);
-    if (curr == NULL || vertexSet.empty()) return;
-    curr->dist = 0;
-    queueVertex.push(curr);
-    while(!queueVertex.empty()){
-        curr = queueVertex.front();
-        queueVertex.pop();
-        for (Edge<T> edge : curr->adj){
-            if (edge.dest->dist == INF){
-                edge.dest->dist = curr->dist + 1;
-                edge.dest->path = curr;
-                queueVertex.push(edge.dest);
-            }
-        }
-    }
+
+    if(!findVertex(value)->visited)
+        dfsVisit(findVertex(value),res);
+
+
+    return res;
+
 }
 
+/*
+ * Auxiliary function that visits a vertex (v) and its adjacent not yet visited, recursively.
+ * Updates a parameter with the list of visited node contents.
+ */
+template <class T>
+void Graph<T>::dfsVisit(Vertex<T> *v, std::vector<T> & res) const {
+    v->visited=true;
+    res.push_back(v->info);
+
+    for(auto edge: v->adj)
+        if(!edge.dest->visited)
+            dfsVisit(edge.dest,res);
+
+    return;
+}
 
 template<class T>
 bool Graph<T>::dijkstraShortestPath(const T &origin, const T& destiny) {
@@ -319,35 +307,6 @@ bool Graph<T>::aStarShortestPath(const T &origin, const T &destiny) {
     return dest->dist != INF;
 }
 
-
-template<class T>
-void Graph<T>::bellmanFordShortestPath(const T &orig) {
-    for (Vertex<T>* vertex : vertexSet){
-        vertex->dist = INF;
-        vertex->path = nullptr;
-    }
-    Vertex<T>* start = findVertex(orig);
-    if (start == NULL || vertexSet.empty()) return;
-    start->dist = 0;
-    for (int i = 1; i <= vertexSet.size() -1 ; ++i){
-        for (Vertex<T>* vertex : vertexSet){
-            for (Edge<T> &edge : vertex->adj){
-                if (edge.dest->dist > vertex->dist + edge.weight) {
-                    edge.dest->dist = vertex->dist + edge.weight;
-                    edge.dest->path = vertex;
-                }
-            }
-        }
-    }
-    for (Vertex<T>* vertex : vertexSet){
-        for (Edge<T> &edge : vertex->adj){
-            if (vertex->dist + edge.weight < edge.dest->dist){
-                throw std::logic_error("There are cycles of negative weight");
-            }
-        }
-    }
-}
-
 template<class T>
 std::vector<T> Graph<T>::getPath(const T &origin, const T &dest) const{
     Vertex<T>* start = findVertex(origin);
@@ -365,96 +324,6 @@ std::vector<T> Graph<T>::getPath(const T &origin, const T &dest) const{
     std::reverse(edgesPath.begin(), edgesPath.end());
     return edgesPath;
 }
-
-
-/**************** All Pairs Shortest Path  ***************/
-
-template<class T>
-void Graph<T>::floydWarshallShortestPath() {
-    /*
-    D_Floyd_Warshall = std::vector<std::vector<int>>(vertexSet.size(), std::vector<int>(vertexSet.size(), 0));
-    P_Floyd_Warshall = std::vector<std::vector<int>>(vertexSet.size(), std::vector<int>(vertexSet.size(), 0));
-    for (int i = 0; i < vertexSet.size(); i++) {
-        for (int j = 0; j < vertexSet.size(); j++) {
-            if (i == j) {
-                D_Floyd_Warshall[i][j] = 0;
-            }
-            int weight = INF;
-            for (Edge<T> &edge : vertexSet[i]->adj) {
-                if (edge.dest == vertexSet[j]) {
-                    weight = edge.weight;
-                    break;
-                }
-            }
-            D_Floyd_Warshall[i][j] = weight;
-            if (weight != INF) {
-                P_Floyd_Warshall[i][j] = j;
-            }
-        }
-    }
-    for(int k = 0; k < vertexSet.size(); k++) {
-        for (int i = 0; i < vertexSet.size(); i++) {
-            for (int j = 0; j < vertexSet.size(); j++) {
-                if(D_Floyd_Warshall[i][k] + D_Floyd_Warshall[k][j] < D_Floyd_Warshall[i][j]){
-                    D_Floyd_Warshall[i][j] = D_Floyd_Warshall[i][k] + D_Floyd_Warshall[k][j];
-                    P_Floyd_Warshall[i][j] = P_Floyd_Warshall[i][k];
-                }
-            }
-        }
-    }*/
-    D_Floyd_Warshall = std::vector<std::vector<int>>(vertexSet.size(), std::vector<int>(vertexSet.size(), 0));
-    P_Floyd_Warshall = std::vector<std::vector<int>>(vertexSet.size(), std::vector<int>(vertexSet.size(), 0));
-    for(size_t i = 0; i < vertexSet.size(); i++){
-        for (size_t j = 0; j < vertexSet.size(); j++){
-            if(i == j) D_Floyd_Warshall[i][j] = 0;
-            int weight = INF;
-            auto currentVertex = vertexSet[i];
-            for(auto edge: currentVertex->adj){
-                if(edge.dest == vertexSet[j]){
-                    weight = edge.weight;
-                    break;
-                }
-            }
-            D_Floyd_Warshall[i][j] = weight;
-            if(weight != INF) P_Floyd_Warshall[i][j] = j;
-        }
-    }
-    for(size_t k = 0; k < vertexSet.size(); k++) {
-        for (size_t i = 0; i < vertexSet.size(); i++) {
-            for (size_t j = 0; j < vertexSet.size(); j++) {
-                if(D_Floyd_Warshall[i][k] + D_Floyd_Warshall[k][j] < D_Floyd_Warshall[i][j]){
-                    D_Floyd_Warshall[i][j] = D_Floyd_Warshall[i][k] + D_Floyd_Warshall[k][j];
-                    P_Floyd_Warshall[i][j] = P_Floyd_Warshall[i][k];
-                }
-            }
-        }
-    }
-}
-
-template<class T>
-std::vector<T> Graph<T>::getfloydWarshallPath(const T &orig, const T &dest) const{
-    std::vector<T> res;
-
-    auto currentVertex = findVertex(orig);
-    auto destinationVertex = findVertex(dest);
-    auto currentVertexIt = std::find(vertexSet.begin(), vertexSet.end(), currentVertex);
-    auto destinationVertexIt = std::find(vertexSet.begin(), vertexSet.end(), destinationVertex);
-
-    if(currentVertexIt == vertexSet.end() || destinationVertexIt == vertexSet.end()) return res;
-
-    size_t currentIndex = std::distance(vertexSet.begin(), currentVertexIt);
-    size_t destinationIndex = std::distance(vertexSet.begin(),destinationVertexIt);
-
-    if(D_Floyd_Warshall[currentIndex][destinationIndex] == INF) return res;
-
-    for(; currentIndex != destinationIndex; currentIndex = P_Floyd_Warshall[currentIndex][destinationIndex]){
-        res.push_back(vertexSet.at(currentIndex)->info);
-    }
-
-    res.push_back(vertexSet.at(destinationIndex)->info);
-    return res;
-}
-
 
 /*********************Strong Connected Vertexes****************************/
 
@@ -509,8 +378,5 @@ void Graph<T>::strongConnect(Vertex<T>* v,std::stack<Vertex<T>*> &stack, int &in
         }
     }
 }
-
-
-
 
 #endif //_GRAPH_H_

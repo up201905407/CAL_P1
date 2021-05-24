@@ -98,7 +98,7 @@ void Vehicle::setPathList(const std::vector<unsigned long> &pathList) {
 }
 
 
-void Vehicle::addPath(unsigned long path) {
+void Vehicle::addVertex(unsigned long path) {
     this->path_list.push_back(path);
 }
 

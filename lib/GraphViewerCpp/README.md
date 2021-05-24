@@ -5,7 +5,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/graphviewercpp/badge/?version=latest)](https://graphviewercpp.readthedocs.io/en/latest/?badge=latest)
 
-**GraphViewerCpp** is a tool for **graph visualization** using the SFML library, in the context of the **Algorithm Design and Analysis** course, at **FEUP**. It has been primarily developed by [Diogo Rodrigues](https://github.com/dmfrodrigues), and is to be maintained by the course's Teaching Assistant students.
+**GraphViewerCpp** is a tool for **Graph visualization** using the SFML library, in the context of the **Algorithm Design and Analysis** course, at **FEUP**. It has been primarily developed by [Diogo Rodrigues](https://github.com/dmfrodrigues), and is to be maintained by the course's Teaching Assistant students.
 
 ## Documentation
 
@@ -74,6 +74,6 @@ cmake --build .
 2. Open CLion > Open > Choose the example dir in the repository
 3. Run the project. You will the following three different graphs being loaded, in different windows
 
-![random graph](https://raw.githubusercontent.com/dmfrodrigues/GraphViewerCpp/master/example/resources/graphs/random/preview.png)
-![star graph](https://raw.githubusercontent.com/dmfrodrigues/GraphViewerCpp/master/example/resources/graphs/star/preview.png)
-![rainbow graph](https://raw.githubusercontent.com/dmfrodrigues/GraphViewerCpp/master/example/resources/graphs/rainbow/preview.png)
+![random Graph](https://raw.githubusercontent.com/dmfrodrigues/GraphViewerCpp/master/example/resources/graphs/random/preview.png)
+![star Graph](https://raw.githubusercontent.com/dmfrodrigues/GraphViewerCpp/master/example/resources/graphs/star/preview.png)
+![rainbow Graph](https://raw.githubusercontent.com/dmfrodrigues/GraphViewerCpp/master/example/resources/graphs/rainbow/preview.png)

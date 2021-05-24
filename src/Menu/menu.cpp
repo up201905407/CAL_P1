@@ -10,7 +10,6 @@ Menu::Menu(Company *company, Graph<unsigned long int> *graph, Gui<unsigned long 
 
 }
 
-
 void Menu::init(){
     while (true){
         std::cout << "1 - View fleet and baskets" << std::endl;
@@ -207,12 +206,14 @@ void Menu::resultsMenu(){
         std::cin.ignore(1000, '\n');
         switch (userInput) {
             case 1:
-                clarkeWright.clarkeWight();
+                if (!clarkeWright.clarkeWight()){
+                    std::cout << "Not enough vehicles" << std::endl;
+                    return;
+                }
                 for(Vehicle *vehicle : company->getFleet()) {
                     for (int i = 0; i < ((int)vehicle->getPathList().size()) - 1; i++) {
-                        std::cout << i << "<" << (vehicle->getPathList().size() -1) << std::endl;
                         if (!graph->aStarShortestPath(vehicle->getPathList()[i], vehicle->getPathList()[i + 1])) {
-                            std::cout << "ERROR" << std::endl;
+                            std::cout << "Error finding path" << std::endl;
                             return;
                         }
                         vehicle->addPath(graph->getPath(vehicle->getPathList()[i], vehicle->getPathList()[i + 1]));
@@ -238,6 +239,7 @@ void Menu::createVehicle(){
         std::cin.clear();
         std::cin.ignore(1000, '\n');
         std::cout << "Please enter vehicle capacity" << std::endl;
+        std::cout << "-> ";
         std::cin >> vehicleCap;
     }
     Vehicle* v = new Vehicle(vehicleCap);
@@ -254,6 +256,7 @@ void Menu::createBasket(){
         std::cin.clear();
         std::cin.ignore(1000, '\n');
         std::cout << "Please enter client name" << std::endl;
+        std::cout << "-> ";
         getline(std::cin, clientName);
     }
 
@@ -265,16 +268,21 @@ void Menu::createBasket(){
         std::cin.clear();
         std::cin.ignore(1000, '\n');
         std::cout << "Please enter number of packages" << std::endl;
+        std::cout << "-> ";
         std::cin >> numPack;
     }
 
     std::cout << "Please enter id of destination" << std::endl;
     int idDest;
+    std::vector<unsigned long int> dfs_Res = graph->dfs(company->getDepotInfo());
+    std::cout << "-> ";
     std::cin >> idDest;
-    while (std::cin.fail() || std::cin.eof() || idDest <= 0){
+    bool idDestReachable = (std::find(dfs_Res.begin(),dfs_Res.end(),idDest)!=dfs_Res.end());
+    while (std::cin.fail() || std::cin.eof() || idDest <= 0 || !idDestReachable){
         std::cin.clear();
         std::cin.ignore(1000, '\n');
-        std::cout << "Please enter id of destination" << std::endl;
+        std::cout << "Id not found or place not reachable from depot\nPlease enter id of destination" << std::endl;
+        std::cout << "-> ";
         std::cin >> idDest;
     }
 
@@ -286,6 +294,7 @@ void Menu::createBasket(){
         std::cin.clear();
         std::cin.ignore(1000, '\n');
         std::cout << "Please enter invoice number" << std::endl;
+        std::cout << "-> ";
         std::cin >> numFat;
     }
 
@@ -304,6 +313,7 @@ void Menu::deleteVehicle(){
         std::cin.clear();
         std::cin.ignore(1000, '\n');
         std::cout << "Please enter vehicle capacity" << std::endl;
+        std::cout << "-> ";
         std::cin >> vehicleId;
     }
     company->removeVehicle(vehicleId);
@@ -320,6 +330,7 @@ void Menu::deleteBasket(){
         std::cin.clear();
         std::cin.ignore(1000, '\n');
         std::cout << "Please enter vehicle capacity" << std::endl;
+        std::cout << "-> ";
         std::cin >> numFat;
     }
     company->removeBasket(numFat);

@@ -12,7 +12,7 @@
 #include <SFML/Graphics.hpp>
 
 /**
- * @brief Class to save and represent a graph.
+ * @brief Class to save and represent a Graph.
  */
 class GraphViewer {
 public:
@@ -403,7 +403,7 @@ public:
     
 public:
     /**
-     * @brief Construct a new graph.
+     * @brief Construct a new Graph.
      */
     GraphViewer();
 
@@ -605,7 +605,7 @@ private:
     sf::Texture background_texture;             ///< @brief Background texture (must be kept alive).
     sf::Sprite background_sprite;               ///< @brief Background sprite.
     sf::RenderWindow *window = nullptr;         ///< @brief Window.
-    sf::View *view       = nullptr;             ///< @brief Default view, to draw the graph.
+    sf::View *view       = nullptr;             ///< @brief Default view, to draw the Graph.
     sf::View *debug_view = nullptr;             ///< @brief Debug view, to draw debug information.
     std::thread *main_thread = nullptr;         ///< @brief Main thread.
     bool windowOpen = false;
@@ -660,7 +660,7 @@ private:
      */
     void run();
     /**
-     * @brief Draw graph and debug information.
+     * @brief Draw Graph and debug information.
      */
     void draw();
     /**

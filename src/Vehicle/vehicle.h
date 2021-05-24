@@ -57,27 +57,37 @@ public:
      * @return This function will return true if the basket was sucessfully found, it will return false, otherwise
      */
     Basket* findBasket(unsigned long int numFat);
-
+    /**
+    * Getter function for baskets' vector
+    * @return This function will return the vector of baskets
+    */
     std::vector<Basket*> getBaskets();
-
+    /**
+    * Removes the basket specified by numFat from the baskets' vector
+    * @param numFat Bill number, since it is unique, which will be used in the search for the basket
+    * @return This function will return true if the basket was sucessfully removed, it will return false, otherwise
+    */
     bool removeBasket(unsigned long int numFat);
-
     /**
      * Will remove every basket from the list
      */
     void clearBaskets();
-
+    /**
+    *
+    * @return This function returns the current load of the specified vehicle
+    */
     unsigned long getCurrentLoad() const;
-
+    /**
+     * Updates vehicles' current load
+     * @param currentLoad Vehicle's new current load
+     */
     void setCurrentLoad(unsigned long currentLoad);
 
     const std::vector<unsigned long> &getPathList() const;
 
     void setPathList(const std::vector<unsigned long> &pathList);
 
-    void addPath(unsigned long path);
-
-    bool isInPath(unsigned long path);
+    void addVertex(unsigned long path);
 
     void addPath(std::vector<unsigned long int> path);
 

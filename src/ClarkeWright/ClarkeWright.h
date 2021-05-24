@@ -2,12 +2,19 @@
 #define _CLARKEWRIGHT_H_
 
 #include "../Graph/Graph.h"
-#include "../PathCalculator/pathcalculator.h"
 #include "../Company/company.h"
 #include "../Utils/utils.h"
 #include <vector>
 #include <iterator>
 
+
+/**
+ *
+ * Struct which represents the savings from Clarke and Wright
+ * in->Inicial point
+ * target->Final point
+ * saved-> Saved cost
+ */
 template<typename T>
 struct saving{
     T in;
@@ -15,6 +22,12 @@ struct saving{
     double saved;
 };
 
+/**
+ * Struct that represents vehicle path
+ * begin-> Path's beginning
+ * end-> Path's ending
+ * path-> Path
+ */
 template<typename T>
 struct road{
     T begin;
@@ -22,24 +35,57 @@ struct road{
     std::vector<T> path;
 };
 
-
+/**
+ *Clark and Wright Algorithm
+ */
 template<class T>
 class ClarkeWright {
 private:
+    /**
+     * Stores the costs between two main vertexes
+     */
     double costs[50][50];
     //1º vertex needs to be depot
+    /**
+     * Demand points
+     */
     std::vector<Vertex<T>*> vertexes;
     Graph<T> *graph;
     Company* company;
+
+    /**
+     * Vector of savings
+     */
     std::vector<saving<T>> savings;
 
+    /**
+     *Creates the vector of demand points from their infos on baskets
+     */
     void createVertexes();
+    /**
+     * Creates the matrix which contains all the costs between two points
+     */
     void getCostsMatrix();
+    /**
+     * Creatas the savings vector from the costs' matrix
+     */
     void getSavingsFromMatrix();
+    /**
+     * Sorts the saving vector in descending order
+     */
     void sortSavings();
 
 public:
+    /**
+     * Contructor of this class
+     * @param graph Graph of the main city
+     * @param company Company PapaRicos
+     */
     ClarkeWright(Graph<T> *graph, Company* company);
+    /**
+     * Function that executes the Clarke and Wright algortithm with some restrictions
+     * @return true if it worked out and false if all the baskets can´t be delivered
+     */
     bool clarkeWight();
 };
 
