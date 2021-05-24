@@ -17,7 +17,6 @@ void print(std::vector<unsigned long int> const &input)
     std::cout<<std::endl;
 }
 
-
 void sccViewer(std::set<std::set<unsigned long int>> input){
     for(auto i = input.begin(); i!=input.end(); i++){
         std::cout<<"->";
@@ -29,25 +28,16 @@ void sccViewer(std::set<std::set<unsigned long int>> input){
 }
 
 int main() {
-
     Graph<unsigned long int> graph;
     GraphBuilder<unsigned long int> graphBuilder(&graph);
     std::string city = "porto";
     if (!graphBuilder.fillGraph(city)){
         std::cout << "error" << std::endl;
     }
-    /*
-    Gui<unsigned long int> gui(&graph);
-    unsigned long int start = 90379359;
-    unsigned long int end = 90379614;
-    //gui.graphViewer();
-    //std::cout << graph.aStarShortestPath(start, end) << std::endl;
-    //print(graph.getPath(start, end));
-    int scc_Vertexes = gui.graphViewerConnectivityCheck(graph.getTarjanStronglyConnectedVertex());
-    std::cout<<"Total number of Vertexes: "<<graph.getNumVertex()<<std::endl<< "Vertexes belonging to a SCC: "<<scc_Vertexes<<std::endl<<"Ratio: "<<(double)scc_Vertexes/(double )graph.getNumVertex() * 100<<"%"<<std::endl;
-    //gui.graphViewerWithPath(start, end);
-         */
-    unsigned long int depot = 314075472;
+    //Gui<unsigned long int> gui(&graph);
+    //int scc_Vertexes = gui.graphViewerConnectivityCheck(graph.getTarjanStronglyConnectedVertex());
+    //std::cout<<"Total number of Vertexes: "<<graph.getNumVertex()<<std::endl<< "Vertexes belonging to a SCC: "<<scc_Vertexes<<std::endl<<"Ratio: "<<(double)scc_Vertexes/(double )graph.getNumVertex() * 100<<"%"<<std::endl;
+    unsigned long int depot = 111447975;
 
     Company company(depot);
 
@@ -57,10 +47,10 @@ int main() {
     Vehicle v3(14);
     Vehicle v4(18);
 
-    Basket b1("Luis", 20, 495504022, 1);
-    Basket b2("Luis", 10, 111632672, 2);
-    Basket b3("Luis", 15, 111632674, 3);
-    Basket b4("Luis", 5, 90381067, 4);
+    Basket b1("Luis", 20, 111447978, 1);
+    Basket b2("Luis", 10, 111447980, 2);
+    Basket b3("Luis", 15, 111447984, 3);
+    Basket b4("Luis", 5, 111447981, 4);
 
     company.addVehicle(&v1);
     company.addVehicle(&v2);
@@ -72,7 +62,8 @@ int main() {
     company.addBasket(&b3);
     company.addBasket(&b4);
 
-     /* Testing purposes
+    //Testing purposes
+    /*
     ClarkeWright<unsigned long int> clarkeWright(&graph,&company);
 
     clarkeWright.clarkeWight();
@@ -80,9 +71,9 @@ int main() {
     for(Vehicle *vehicle : company.getFleet()){
         print(vehicle->getPathList());
     }
-     */
-
-    Menu menu(&company, &graph);
+*/
+    Gui<unsigned long int> gui(&graph, &company);
+    Menu menu(&company, &graph, &gui);
     menu.init();
 
     return 0;

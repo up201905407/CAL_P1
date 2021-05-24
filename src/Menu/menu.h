@@ -7,13 +7,16 @@
 
 class Menu {
 public:
-    Menu(Company *company, Graph<unsigned long int> *graph);
+    Menu(Company *company, Graph<unsigned long int> *graph, Gui<unsigned long int> *gui);
     void init();
 
 private:
     Graph<unsigned long int>* graph;
     Company *company;
-    Gui<unsigned long> gui = nullptr;
+    Gui<unsigned long> *gui;
+    void viewMenu();
+    void viewFleet();
+    void viewBaskets();
     void dataMenu();
     void connectivityMenu();
     void resultsMenu();

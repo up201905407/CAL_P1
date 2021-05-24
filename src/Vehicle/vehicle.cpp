@@ -17,6 +17,7 @@ Vehicle::Vehicle(){
 Vehicle::Vehicle(unsigned long int maxCap){
     this->maxCap = maxCap;
     this->currentLoad = 0;
+    setId(id++);
 }
 
 
@@ -59,12 +60,6 @@ std::vector<Basket*> Vehicle::getBaskets(){
     return baskets;
 }
 
-
-void Vehicle::addPath(std::pair<unsigned long int, unsigned long int> path){
-    this->path.push_back(path);
-}
-
-
 bool Vehicle::removeBasket(unsigned long int numFat){
     Basket* basket = findBasket(numFat);
     if (basket == nullptr){
@@ -105,9 +100,17 @@ void Vehicle::setPathList(const std::vector<unsigned long> &pathList) {
 
 void Vehicle::addPath(unsigned long path) {
     this->path_list.push_back(path);
-
 }
 
+void Vehicle::addPath(std::vector<unsigned long int> path){
+    for (auto elem : path){
+        this->path.push_back(elem);
+    }
+}
+
+std::vector<unsigned long int> Vehicle::getPath(){
+    return path;
+}
 
 
 

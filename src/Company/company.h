@@ -6,16 +6,12 @@
 
 class Company{
 private:
-    double latitude;
-    double longitude;
     unsigned long depotInfo;
     std::vector<Vehicle*> fleet;
     std::vector<Basket*> baskets;
 
 public:
     explicit Company(unsigned long depotId);
-    double getLatitude();
-    double getLongitude();
     bool addVehicle(Vehicle* vehicle);
     bool addBasket(Basket* basket);
     std::vector<Vehicle*> getFleet();

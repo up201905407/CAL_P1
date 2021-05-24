@@ -13,21 +13,22 @@ template<class T>
 class Gui{
 private:
     Graph<T>* graph;
+    Company *company;
 public:
-    Gui(Graph<T>* graph);
+    Gui(Graph<T>* graph, Company* company);
     void graphViewer();
-    void graphViewerWithPath(const T &origin, const T &dest);
+    void graphViewerWithPath();
     int graphViewerConnectivityCheck(const std::set<std::set<T>> &scc);
 };
 
 template<class T>
-Gui<T>::Gui(Graph<T> *graph) {
+Gui<T>::Gui(Graph<T> *graph, Company* company) {
     this->graph = graph;
+    this->company = company;
 }
 
 template<class T>
 void Gui<T>::graphViewer() {
-
     std::vector<std::pair<unsigned long int, std::pair<unsigned long int, unsigned long int>>> edges_pair;
     GraphViewer gv;
     gv.setScale(1.0/4000.0);
@@ -67,7 +68,7 @@ void Gui<T>::graphViewer() {
 }
 
 template <class T>
-void Gui<T>::graphViewerWithPath(const T &origin, const T &dest){
+void Gui<T>::graphViewerWithPath(){
     std::vector<std::pair<unsigned long int, std::pair<unsigned long int, unsigned long int>>> edges_pair;
     GraphViewer gv;
     gv.setScale(1.0/4000.0);
@@ -99,10 +100,11 @@ void Gui<T>::graphViewerWithPath(const T &origin, const T &dest){
             0.8
     );
 
-    std::vector<T> path = graph->getPath(origin, dest);
-    for (auto &info : path) {
-        Edge_Viewer &edge = gv.getEdge(info);
-        edge.setColor(GraphViewer::BLUE);
+    for (Vehicle * vehicle : company->getFleet()){
+        for (auto &info : vehicle->getPath()){
+            Edge_Viewer &edge = gv.getEdge(info);
+            edge.setColor(GraphViewer::BLUE);
+        }
     }
 
     //gv.setEnabledNodes(false); // Disable node drawing

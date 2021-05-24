@@ -1,7 +1,3 @@
-//
-// Created by dioma on 5/22/2021.
-//
-
 #ifndef _CLARKEWRIGHT_H_
 #define _CLARKEWRIGHT_H_
 
@@ -296,4 +292,4 @@ bool ClarkeWright<T>::clarkeWight() {
 
 
 
-#endif //CAL_P1_CLARKEWRIGHT_H
+#endif //_CLARKEWRIGHT_H_

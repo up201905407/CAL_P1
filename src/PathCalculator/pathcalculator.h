@@ -1,6 +1,8 @@
 #ifndef _PATHCALCULATOR_H_
 #define _PATHCALCULATOR_H_
 
+/*
+
 #include "../Company/company.h"
 #include "../Graph/Graph.h"
 
@@ -63,6 +65,6 @@ bool PathCalculator<T>::getPaths() {
         }
     }
     return true;
-}
+}*/
 
 #endif //_PATHCALCULATOR_H_

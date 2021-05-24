@@ -6,14 +6,6 @@ Company::Company(unsigned long depotId){
     this->depotInfo = depotId;
 }
 
-double Company::getLatitude(){
-    return latitude;
-}
-
-double Company::getLongitude(){
-    return longitude;
-}
-
 bool Company::addVehicle(Vehicle* vehicle){
     if (findVehicle(vehicle->getId()) != nullptr) return false;
     fleet.push_back(vehicle);

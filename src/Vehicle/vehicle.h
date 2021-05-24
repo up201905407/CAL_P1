@@ -13,10 +13,8 @@ private:
     unsigned long int currentLoad;
     /**<The current load that the vehicle carries*/
     std::vector<Basket*> baskets; /**<List of baskets inside the vehicle*/
-    std::vector<std::pair<unsigned long int , unsigned long int>> path;
+    std::vector<unsigned long int> path = {};
     std::vector<unsigned long int> path_list = {};
-
-
 public:
     /**
      * Vehicle's default constructor that will set the maxCap to infinity (i.e., LONG_MAX)
@@ -62,8 +60,6 @@ public:
 
     std::vector<Basket*> getBaskets();
 
-    void addPath(std::pair<unsigned long int, unsigned long int> path);
-
     bool removeBasket(unsigned long int numFat);
 
     /**
@@ -79,9 +75,13 @@ public:
 
     void setPathList(const std::vector<unsigned long> &pathList);
 
-    void addPath( unsigned long path);
+    void addPath(unsigned long path);
 
     bool isInPath(unsigned long path);
+
+    void addPath(std::vector<unsigned long int> path);
+
+    std::vector<unsigned long int> getPath();
 
 };
 

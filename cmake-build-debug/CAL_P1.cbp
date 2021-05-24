@@ -156,6 +156,9 @@
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h">
 			<Option target="CAL_P1"/>
 		</Unit>
+		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/ClarkeWright/ClarkeWright.h">
+			<Option target="CAL_P1"/>
+		</Unit>
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.cpp">
 			<Option target="CAL_P1"/>
 		</Unit>
