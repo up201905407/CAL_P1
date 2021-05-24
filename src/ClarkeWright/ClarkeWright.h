@@ -220,6 +220,7 @@ bool ClarkeWright<T>::clarkeWight() {
 
             else if(inInPath){
                 if(this->company->findBasketByDest(i->target)== nullptr){
+                    if(this->savings.empty()) break;
                     savings.erase(i);
                     i = savings.begin();
                     continue;
@@ -245,6 +246,7 @@ bool ClarkeWright<T>::clarkeWight() {
             //Apenas está registado o lado target
             else if(targInPath){
                 if(this->company->findBasketByDest(i->in)== nullptr){
+                    if(this->savings.empty()) break;
                     savings.erase(i);
                     i = savings.begin();
                     continue;
