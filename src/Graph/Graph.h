@@ -15,7 +15,6 @@
 #include "MutablePriorityQueue.h"
 #include "../Utils/utils.h"
 
-
 template <class T> class Edge;
 template <class T> class Graph;
 template <class T> class Vertex;
@@ -264,6 +263,7 @@ bool Graph<T>::dijkstraShortestPath(const T &origin, const T& destiny) {
                 bool wasAlreadyAdded = edge.dest->dist != INF;
                 edge.dest->dist = curr->dist + edge.weight;
                 edge.dest->path = curr;
+                edge.dest->edge_path = &edge;
                 if (wasAlreadyAdded){
                     q.decreaseKey(edge.dest);
                 } else {

@@ -9,7 +9,16 @@ class GraphBuilder{
 private:
     Graph<T>* graph;
 public:
+    /**
+     *
+     * @param graph
+     */
     explicit GraphBuilder(Graph<T>* graph);
+    /**
+     * Will read from the files the nodes and edges from the place
+     * @param place The place to be read from the files
+     * @return True on sucess, false otherwise
+     */
     bool fillGraph(const std::string &place);
 };
 

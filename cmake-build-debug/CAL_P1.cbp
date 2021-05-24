@@ -183,9 +183,6 @@
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h">
 			<Option target="CAL_P1"/>
 		</Unit>
-		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/PathCalculator/pathcalculator.h">
-			<Option target="CAL_P1"/>
-		</Unit>
 		<Unit filename="/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.cpp">
 			<Option target="CAL_P1"/>
 		</Unit>

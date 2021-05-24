@@ -6,6 +6,7 @@
 #include "../Utils/utils.h"
 #include <vector>
 #include <iterator>
+#include <algorithm>
 
 
 /**
@@ -149,12 +150,11 @@ bool ClarkeWright<T>::clarkeWight() {
     this->getSavingsFromMatrix();
     this->sortSavings();
     road<unsigned long > road;
+    this->company->sortFleet();
 
     int sizeOfVehicles = this->company->getFleet().size();
     int counter = 0;
     bool runOnce = false;
-
-
     //Enquanto houver baskets, vai ao primeiro camião disponível e adiciona um produto, se conseguir
     while(!this->company->getBaskets().empty()){
 

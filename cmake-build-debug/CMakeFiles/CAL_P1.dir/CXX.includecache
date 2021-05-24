@@ -54,6 +54,20 @@ src/Menu/menu.h
 iostream
 -
 
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/ClarkeWright/ClarkeWright.h
+../Graph/Graph.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+../Company/company.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
+../Utils/utils.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
+vector
+-
+iterator
+-
+algorithm
+-
+
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
 ../Vehicle/vehicle.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
@@ -102,6 +116,16 @@ graphviewer.h
 ../Company/company.h
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
 set
+-
+
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.cpp
+iostream
+-
+menu.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+../ClarkeWright/ClarkeWright.h
+/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/ClarkeWright/ClarkeWright.h
+chrono
 -
 
 /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h

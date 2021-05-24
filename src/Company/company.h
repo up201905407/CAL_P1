@@ -83,6 +83,10 @@ public:
      * @param depotInfo Localization of company
      */
     void setDepotInfo(unsigned long depotInfo);
+    /**
+     * Sort fleet in descending order
+     */
+    void sortFleet();
 };
 
 #endif //_COMPANY_H_

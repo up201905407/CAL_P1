@@ -25,7 +25,6 @@ add_executable(CAL_P1 main.cpp
         src/Utils/utils.h src/Utils/utils.cpp
         src/Gui/gui.h
         src/Menu/menu.h src/Menu/menu.cpp
-        src/PathCalculator/pathcalculator.h
         src/ClarkeWright/ClarkeWright.h
         )
 

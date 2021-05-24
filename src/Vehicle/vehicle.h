@@ -82,15 +82,26 @@ public:
      * @param currentLoad Vehicle's new current load
      */
     void setCurrentLoad(unsigned long currentLoad);
-
+    /**
+     * Returns a vehicle's path
+     * @return Returns a list of Ids of nodes of the path
+     */
     const std::vector<unsigned long> &getPathList() const;
-
+    /**
+     * Updates the vehicle's path
+     * @param pathList List of Ids of nodes of the path
+     */
     void setPathList(const std::vector<unsigned long> &pathList);
-
-    void addVertex(unsigned long path);
-
+    /**
+     * Adds elements to the path of a vehicle
+     * @param path List of Ids of nodes to be added to the path
+     */
     void addPath(std::vector<unsigned long int> path);
 
+    /**
+     * Returns the path of a vehicle
+     * @return List of Ids of nodes of the path
+     */
     std::vector<unsigned long int> getPath();
 
 };

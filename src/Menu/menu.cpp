@@ -1,6 +1,8 @@
 #include <iostream>
 #include "menu.h"
 #include "../ClarkeWright/ClarkeWright.h"
+#include <chrono>
+using namespace std::chrono;
 
 
 Menu::Menu(Company *company, Graph<unsigned long int> *graph, Gui<unsigned long int> *gui){
@@ -212,10 +214,14 @@ void Menu::resultsMenu(){
                 }
                 for(Vehicle *vehicle : company->getFleet()) {
                     for (int i = 0; i < ((int)vehicle->getPathList().size()) - 1; i++) {
+                        //auto start = high_resolution_clock::now();
                         if (!graph->aStarShortestPath(vehicle->getPathList()[i], vehicle->getPathList()[i + 1])) {
                             std::cout << "Error finding path" << std::endl;
                             return;
                         }
+                        //auto stop = high_resolution_clock::now();
+                        //auto duration = duration_cast<microseconds>(stop - start);
+                        //std::cout << "time:" << duration.count() << std::endl;
                         vehicle->addPath(graph->getPath(vehicle->getPathList()[i], vehicle->getPathList()[i + 1]));
                     }
                 }

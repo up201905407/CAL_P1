@@ -59,10 +59,10 @@ std::string getPathEdges(const std::string& city){
     return path;
 }
 
-std::string getPathNodes(const std::string& place){
-    std::string placeUpper = place;
-    placeUpper[0] = std::toupper(placeUpper[0]);
-    std::string path = "../Map/PortugalMaps/PortugalMaps/" + placeUpper + "/nodes_lat_lon_" + place + ".txt";
+std::string getPathNodes(const std::string& city){
+    std::string cityUpper = city;
+    cityUpper[0] = std::toupper(cityUpper[0]);
+    std::string path = "../Map/PortugalMaps/PortugalMaps/" + cityUpper + "/nodes_lat_lon_" + city + ".txt";
     return path;
 }
 

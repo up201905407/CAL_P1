@@ -91,3 +91,7 @@ unsigned long Company::getDepotInfo() const {
 void Company::setDepotInfo(unsigned long depotInfo) {
     Company::depotInfo = depotInfo;
 }
+
+void Company::sortFleet(){
+    std::sort(fleet.begin(), fleet.end(), [](Vehicle* v1, Vehicle *v2){return v1->getMaxCap() < v2->getMaxCap();});
+}

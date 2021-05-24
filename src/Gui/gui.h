@@ -15,11 +15,9 @@ private:
     Graph<T>* graph;
     Company *company;
     std::vector<GraphViewer::Color> colors = {
-            GraphViewer::BLUE,
-            GraphViewer::CYAN,
-            GraphViewer::DARK_GRAY,
             GraphViewer::GRAY,
-            GraphViewer::LIGHT_GRAY,
+            GraphViewer::CYAN,
+            GraphViewer::RED,
             GraphViewer::YELLOW
     };
 public:
@@ -63,14 +61,13 @@ void Gui<T>::graphViewerWithPath(){
             edges_pair.push_back({edge_vertex.getInfo(), {vertex->getInfo(), edge_vertex.getDest()->getInfo()}});
         }
     }
-
     for(auto pair : edges_pair){
         Edge_Viewer &edge = gv.addEdge(pair.first,
                                        gv.getNode(pair.second.first),
                                        gv.getNode(pair.second.second),
                                        GraphViewer::Edge::UNDIRECTED);
         edge.setThickness(0.0001);
-        edge.setColor(GraphViewer::RED);
+        edge.setColor(GraphViewer::BLUE);
     }
 
     gv.setBackground(
@@ -81,7 +78,6 @@ void Gui<T>::graphViewerWithPath(){
     );
     int color = 0;
     for (Vehicle * vehicle : company->getFleet()){
-
         for (auto &info : vehicle->getPathList()){
             Node_Viewer &dest = gv.getNode(info);
             dest.setColor(GraphViewer::MAGENTA);
