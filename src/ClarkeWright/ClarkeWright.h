@@ -152,35 +152,31 @@ bool ClarkeWright<T>::clarkeWight() {
 
     int sizeOfVehicles = this->company->getFleet().size();
     int counter = 0;
+    bool runOnce = false;
 
 
     //Enquanto houver baskets, vai ao primeiro camião disponível e adiciona um produto, se conseguir
     while(!this->company->getBaskets().empty()){
-        if(sizeOfVehicles == counter){return false;}
 
-        if( this->company->getFleet().at(counter)->getMaxCap() == this->company->getFleet().at(counter)->getCurrentLoad()){
-            //Adicionar no final o depot no inicio e fim
-            road.path.insert(road.path.begin(),this->company->getDepotInfo());
-            road.path.insert(road.path.end(),this->company->getDepotInfo());
-            this->company->getFleet().at(counter)->setPathList(road.path);
-            counter++;
-
-            continue;
-        }
-
+        if(sizeOfVehicles == counter){runOnce = true; counter = 0;this->savings.clear(); continue;}
         road.path.clear();
         road.end = 0;
         road.begin = 0;
 
-        auto i= savings.begin();
 
-        if(this->company->getBaskets().size()==1 && this->company->getFleet().at(counter)->getCurrentLoad()+this->company->getBaskets().at(0)->getNumPack()<=this->company->getFleet().at(counter)->getMaxCap()){
+        if(this->savings.empty() && this->company->getFleet().at(counter)->getCurrentLoad()+this->company->getBaskets().at(0)->getNumPack()<=this->company->getFleet().at(counter)->getMaxCap()){
             road.path = {this->company->getDepotInfo(),this->company->getBaskets().at(0)->getIdDest(),this->company->getDepotInfo()};
             this->company->setBaskets({});
             this->company->getFleet().at(counter)->setPathList(road.path);
-            return true;
+            counter++;
+            continue;
+        }else if(this->savings.empty()){
+            if(runOnce && counter== sizeOfVehicles-1) return false;
+            counter++;
+            continue;
         }
 
+        auto i= savings.begin();
         for(i = savings.begin(); i!=savings.end(); i++){
             bool inInPath = false;
             bool targInPath = false;
@@ -191,55 +187,11 @@ bool ClarkeWright<T>::clarkeWight() {
 
             //Caso nenhum dos vértices esteja no path
             if(!(inInPath || targInPath)){
-                //Se os dois vértices forem o mesmo
-                /*
-                if(i->in == i->target){
-                    //se ambos os pedidos não caberem no camião
-                    if(vehicle->getCurrentLoad() + this->company->findBasketByDest(i->in) + this->company->findBasketByDest(i->target)> vehicle->getMaxCap() )
-                    {
-                        //se não couber nenhum dos dois
-                        if(vehicle->getCurrentLoad() + this->company->findBasketByDest(i->in)>0 && vehicle->getCurrentLoad() + this->company->findBasketByDest(i->target)>0){
-                            continue;
-                        }
-                        else{ //se couber apenas o inicial
-                            if(vehicle->getCurrentLoad() + this->company->findBasketByDest(i->in)<=0){
-                                vehicle->setCurrentLoad(vehicle->getCurrentLoad()+this->company->findBasketByDest(i->in));
-                                vehicle->addBasket(this->company->findBasketByDest(i->in));
-                                this->company->removeBasket(this->company->findBasketByDest(i->in)->getNumFat());
-                                //escrever o path no veiculo *Adiciona um vértice*
-                                this->savings.erase(i);
-                                i =savings.begin();
-                            }else{
-                                vehicle->setCurrentLoad(vehicle->getCurrentLoad()+this->company->findBasketByDest(i->target));
-                                vehicle->addBasket(this->company->findBasketByDest(i->target));
-                                this->company->removeBasket(this->company->findBasketByDest(i->target)->getNumFat());
-                                //escrever o path no veiculo *Adiciona um vértice*
-                                this->savings.erase(i);
-                                i =savings.begin();
-                            }
-                            if(vehicle->getCurrentLoad() == vehicle->getMaxCap()) break;
-                        }
 
-                    }
-                    //Cabem os dois no camião
-                    else{
-                        vehicle->setCurrentLoad(vehicle->getCurrentLoad()+this->company->findBasketByDest(i->in) + this->company->findBasketByDest(i->target));
-                        vehicle->addBasket(this->company->findBasketByDest(i->in));
-                        this->company->removeBasket(this->company->findBasketByDest(i->in)->getNumFat());
-                        vehicle->addBasket(this->company->findBasketByDest(i->target));
-                        this->company->removeBasket(this->company->findBasketByDest(i->in)->getNumFat());
-                        //*escrever o path no veiculo* Adiciona um vértice*
-                        this->savings.erase(i);
-                        i =savings.begin();
-                    }
-
-                    if(vehicle->getCurrentLoad() == vehicle->getMaxCap()) break;
-
-                }
-                 */
                 //Os dois vértices não são o mesmo
                 //Se já existirem pontos de rota, ao não coicidir iriamos fazer outro caminho
                 if(!(this->company->findBasketByDest(i->in) != nullptr && this->company->findBasketByDest(i->target)!= nullptr)){
+                    if(this->savings.empty()) break;
                     savings.erase(i);
                     i = savings.begin();
                     continue;
@@ -262,12 +214,12 @@ bool ClarkeWright<T>::clarkeWight() {
                 this->savings.erase(i);
                 i =savings.begin();
 
-                if(this->company->getFleet().at(counter)->getCurrentLoad() == this->company->getFleet().at(counter)->getMaxCap()) break;
+                //if(this->company->getFleet().at(counter)->getCurrentLoad() == this->company->getFleet().at(counter)->getMaxCap()) break;
             }
             //Apenas está registado o lado in
 
             else if(inInPath){
-                if(this->company->findBasketByDest(i->target)->getIdDest()==0){
+                if(this->company->findBasketByDest(i->target)== nullptr){
                     savings.erase(i);
                     i = savings.begin();
                     continue;
@@ -288,11 +240,11 @@ bool ClarkeWright<T>::clarkeWight() {
 
                 this->savings.erase(i);
                 i =savings.begin();
-                if(this->company->getFleet().at(counter)->getCurrentLoad() == this->company->getFleet().at(counter)->getMaxCap()) break;
+                //if(this->company->getFleet().at(counter)->getCurrentLoad() == this->company->getFleet().at(counter)->getMaxCap()) break;
             }
             //Apenas está registado o lado target
             else if(targInPath){
-                if(this->company->findBasketByDest(i->in)->getIdDest()==0){
+                if(this->company->findBasketByDest(i->in)== nullptr){
                     savings.erase(i);
                     i = savings.begin();
                     continue;
@@ -312,19 +264,22 @@ bool ClarkeWright<T>::clarkeWight() {
                 }
                 this->savings.erase(i);
                 i =savings.begin();
-                if(this->company->getFleet().at(counter)->getCurrentLoad() == this->company->getFleet().at(counter)->getMaxCap()) break;
+                //if(this->company->getFleet().at(counter)->getCurrentLoad() == this->company->getFleet().at(counter)->getMaxCap()) break;
             }
             else if(targInPath && inInPath) continue;
 
         }
 
-        if(i == savings.end()){
+        if(i == savings.end()&&road.path.size()>0){
             road.path.insert(road.path.begin(),this->company->getDepotInfo());
             road.path.insert(road.path.end(),this->company->getDepotInfo());
             this->company->getFleet().at(counter)->setPathList(road.path);
             counter++;
             continue;
         }
+
+        counter++;
+
 
     }
 
