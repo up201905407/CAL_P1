@@ -32,35 +32,39 @@ lines.h
 
 ../lib/GraphViewerCpp/include/lines.h
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/main.cpp
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/main.cpp
 iostream
 -
 src/Graph/Graph.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/Graph.h
 src/GraphBuilder/graphbuilder.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/GraphBuilder/graphbuilder.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/GraphBuilder/graphbuilder.h
 src/Gui/gui.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/gui.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Gui/gui.h
 src/Company/company.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Company/company.h
 src/Vehicle/vehicle.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
 src/Basket/basket.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Basket/basket.h
 src/Menu/menu.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Menu/menu.h
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Basket/basket.cpp
+basket.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Basket/basket.h
+
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Basket/basket.h
 iostream
 -
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/ClarkeWright/ClarkeWright.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/ClarkeWright/ClarkeWright.h
 ../Graph/Graph.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/Graph.h
 ../Company/company.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Company/company.h
 ../Utils/utils.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Utils/utils.h
 vector
 -
 iterator
@@ -68,11 +72,17 @@ iterator
 algorithm
 -
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
-../Vehicle/vehicle.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Company/company.cpp
+company.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Company/company.h
+algorithm
+-
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Company/company.h
+../Vehicle/vehicle.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/Graph.h
 vector
 -
 queue
@@ -94,57 +104,75 @@ set
 climits
 -
 MutablePriorityQueue.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
 ../Utils/utils.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Utils/utils.h
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/MutablePriorityQueue.h
 vector
 -
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/GraphBuilder/graphbuilder.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/GraphBuilder/graphbuilder.h
 ../Graph/Graph.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/Graph.h
 ../Utils/utils.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Utils/utils.h
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/gui.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Gui/gui.h
 ../Graph/Graph.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/Graph.h
 graphviewer.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/graphviewer.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Gui/graphviewer.h
 ../Company/company.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Company/company.h
 set
 -
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.cpp
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Menu/menu.cpp
 iostream
 -
 menu.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Menu/menu.h
 ../ClarkeWright/ClarkeWright.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/ClarkeWright/ClarkeWright.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/ClarkeWright/ClarkeWright.h
 chrono
 -
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Menu/menu.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Menu/menu.h
 ../Company/company.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Company/company.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Company/company.h
 ../Gui/gui.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Gui/gui.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Gui/gui.h
 ../Graph/Graph.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Graph/Graph.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Graph/Graph.h
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Utils/utils.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Utils/utils.cpp
+utils.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Utils/utils.h
+fstream
+-
+iostream
+-
+cmath
+-
+
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Utils/utils.h
 vector
 -
 string
 -
 
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Vehicle/vehicle.cpp
+vehicle.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
+algorithm
+-
+climits
+-
+
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Vehicle/vehicle.h
 ../Basket/basket.h
-/home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/src/Basket/basket.h
+/home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/src/Basket/basket.h
 vector
 -
 

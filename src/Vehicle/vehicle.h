@@ -104,6 +104,11 @@ public:
      */
     std::vector<unsigned long int> getPath();
 
+    /**
+     * Adds path to the path list
+     * @param path
+     */
+    void addVertex(unsigned long path);
 };
 
 #endif //_VEHICLE_H_

@@ -1,4 +1,4 @@
-# Install script for directory: /home/lucas/Desktop/Universidade/2 ano/2 semestre/CAL/CAL_P1/lib/GraphViewerCpp
+# Install script for directory: /home/lucas/Desktop/Universidade/2_ano/2_semestre/CAL/CAL_P1/lib/GraphViewerCpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

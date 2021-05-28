@@ -19,7 +19,7 @@ int main(){
     Company company(depot);
     /* TESTING*/
 
-    /*
+
     Vehicle v2(10);
     Vehicle v3(14);
     Vehicle v4(18);
@@ -38,7 +38,7 @@ int main(){
     company.addBasket(&b1);
     company.addBasket(&b2);
     company.addBasket(&b3);
-    company.addBasket(&b4);*/
+    company.addBasket(&b4);
 
     Gui<unsigned long int> gui(&graph, &company);
     Menu menu(&company, &graph, &gui);
